@@ -37,14 +37,22 @@
                 Go To Our Old Site?
             </button>
             <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'" class="button play">
+            </button>
         </div>
     </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Rocky Reborn (Games)</p> 
+    </footer>
+
     <script>
         fetch('splash.json')
             .then((res) => res.json())
             .then((data) => {
                 document.querySelector('#splash').innerHTML =
-                    data[Math.floor(Math.random() * data.length)]
-            })
+                    data[Math.floor(Math.random() * data.length)];
+            });
     </script>
+</body>
 </html>
