@@ -5,8 +5,7 @@
             crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title> <!-- Change this to the title of the tab you want -->
-    <link rel="icon" href="favicon.ico"
+    <title>Rocky Reborn | Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
 </head>
@@ -31,29 +30,25 @@
             <h1>Welcome To <span>Rocky Reborn (Games)</span></h1>
             <p id="splash"></p>
             <br />
+
             <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'" class="button play">
                 Join our Discord
             </button>
             <button onclick="window.location.href='https://sites.google.com/view/rocky-games'" class="button play">
                 Go To Our Old Site?
             </button>
-            <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'" class="button play">
+            <button onclick="window.location.href='https://sites.google.com/view/dust-games" class="button play">
+                Billy Games??
             </button>
-        </div>
+       </div>
     </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Rocky Reborn (Games)</p> 
-    </footer>
-
     <script>
-        fetch('splash.json')
+        fetch('./storage/splash.json')
             .then((res) => res.json())
             .then((data) => {
                 document.querySelector('#splash').innerHTML =
-                    data[Math.floor(Math.random() * data.length)];
-            });
+                    data[Math.floor(Math.random() * data.length)]
+            })
     </script>
 </body>
 </html>
