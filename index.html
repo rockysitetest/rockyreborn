@@ -8,55 +8,91 @@
     <title>Rocky Reborn | Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #0284d4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gxmes.html">Games</a></li>
-                <li><a href="index.html">Apps</a></li>
-                <li><a href="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615">Onsite Discord</a></li>
-                <li><a href="emulator.html">Emulator</a></li>
-                <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-                <li><a href="index.html">New Game Ideas</a></li>
-                <li><a href="index.html">Report a Problem</a></li>
-                <li><a href="index.html">About Rocky</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="center-container">
-            <h1>Welcome To <span>Rocky Reborn (Games)</span></h1>
-            <p id="splash"></p>
-            <br />
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gxmes.html">Games</a></li>
+                    <li><a href="index.html">Apps</a></li>
+                    <li><a href="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615">Onsite Discord</a></li>
+                    <li><a href="emulator.html">Emulator</a></li>
+                    <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+                    <li><a href="index.html">New Game Ideas</a></li>
+                    <li><a href="index.html">Report a Problem</a></li>
+                    <li><a href="index.html">About Rocky</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="center-container">
+                <h1>Welcome To <span>Rocky Reborn (Games)</span></h1>
+                <p id="splash"></p>
+                <br />
+                <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'" class="button play">
+                    Join our Discord
+                </button>
+                <button onclick="window.location.href='https://sites.google.com/view/rocky-games'" class="button play">
+                    Go To Our Old Site?
+                </button>
+                <button onclick="window.location.href='https://sites.google.com/view/dust-games'" class="button play">
+                    Billy Games??
+                </button>
+            </div>
+        </main>
+    </div>
 
-            <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'" class="button play">
-                Join our Discord
-            </button>
-            <button onclick="window.location.href='https://sites.google.com/view/rocky-games'" class="button play">
-                Go To Our Old Site?
-            </button>
-            <button onclick="window.location.href='https://sites.google.com/view/dust-games" class="button play">
-                Billy Games??
-            </button>
-       </div>
-    </main>
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+        <p style="font-size: 14px; color: #ccc;">&copy; 2025 Rocky Reborn. All rights reserved.</p>
+    </footer>
+
     <script>
         fetch('./storage/splash.json')
             .then((res) => res.json())
             .then((data) => {
                 document.querySelector('#splash').innerHTML =
-                    data[Math.floor(Math.random() * data.length)]
-            })
+                    data[Math.floor(Math.random() * data.length)];
+            });
     </script>
-        <footer style="background-color: #000; color: black; padding: 20px 0; text-align: center;">
-        <p>
-            <a href="privacy-policy.html" style="color: #0284d4; text-decoration: none;">Privacy Policy</a> |
-            <a href="terms-of-service.html" style="color: #0284d4; text-decoration: none;">Terms of Service</a> |
-            <a href="contact.html" style="color: #0284d4; text-decoration: none;">Contact Us</a>
-        </p>
-        <p style="font-size: 14px; color: #ccc;">&copy; 2025 Rocky Reborn. All rights reserved.</p>
-    </footer>
-
+</body>
 </html>
