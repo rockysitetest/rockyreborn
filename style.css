@@ -1,4 +1,14 @@
-body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Site Title</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css"> <!-- your CSS file -->
+</head>
+<body>
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -190,3 +200,8 @@ h1 {
         opacity: 1;
     }
 }
+
+
+
+</body>
+</html>
