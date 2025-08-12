@@ -3,35 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Google Form Embed</title>
+  <title>Rocky Games - Google Form</title>
   <style>
-    .form-container {
-      position: relative;
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      min-height: 1200px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      color: white;
     }
-    .form-container iframe {
-      position: absolute;
-      top: 0; left: 0;
+
+    header {
+      background-color: #333;
+      padding: 10px 0;
+      position: fixed;
       width: 100%;
-      height: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-list li {
+      margin-right: 20px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-list a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 80px 20px 40px; /* padding-top to avoid header overlap */
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .frame {
+      border-radius: 5px;
+      background-color: white;
       border: none;
+      width: 100%;
+      height: 1200px;
+      max-width: 900px;
+      display: block;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
 
-  <h1>Fill Out The Report A Problem Form</h1>
-  
-  <div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfr3jalFkvk21lTDfP_A4goPY9XX2G7KuFcsvgvO1EMXgfJsw/viewform?embedded=true"
-            loading="lazy" 
-            allowfullscreen>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">Apps</a></li>
+        <li><a href="#">Onsite Discord</a></li>
+        <li><a href="#">Emulator</a></li>
+        <li><a href="#">Wifi Password Puller</a></li>
+        <li><a href="#">New Ideas</a></li>
+        <li><a href="#">Report a Problem</a></li>
+        <li><a href="#">About Rocky</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <iframe
+      class="frame"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfr3jalFkvk21lTDfP_A4goPY9XX2G7KuFcsvgvO1EMXgfJsw/viewform?embedded=true"
+      loading="lazy"
+      allowfullscreen>
       Loading…
     </iframe>
-  </div>
+  </main>
 
 </body>
 </html>
