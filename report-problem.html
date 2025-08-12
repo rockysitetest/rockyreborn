@@ -41,10 +41,16 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      transition: color 0.3s ease;
     }
 
     .nav-list a:hover {
       text-decoration: underline;
+    }
+
+    .nav-list a.active {
+      text-decoration: underline;
+      color: #0284d4;
     }
 
     main {
@@ -70,15 +76,15 @@
   <header>
     <nav>
       <ul class="nav-list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Games</a></li>
-        <li><a href="#">Apps</a></li>
-        <li><a href="#">Onsite Discord</a></li>
-        <li><a href="#">Emulator</a></li>
-        <li><a href="#">Wifi Password Puller</a></li>
-        <li><a href="#">New Ideas</a></li>
-        <li><a href="#">Report a Problem</a></li>
-        <li><a href="#">About Rocky</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
       </ul>
     </nav>
   </header>
@@ -92,6 +98,18 @@
       Loading…
     </iframe>
   </main>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-list a');
+    const currentPage = window.location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage || 
+          (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
 </body>
 </html>
