@@ -5,7 +5,6 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: white;
-
 }
 
 .center-container {
@@ -41,6 +40,10 @@ body {
 header {
     background-color: #333;
     padding: 10px 0;
+    position: fixed;       /* added */
+    top: 0;                /* added */
+    width: 100%;           /* added */
+    z-index: 1000;         /* added */
 }
 
 h1, h2, h3 {
@@ -81,7 +84,6 @@ button {
     transition: 0.4s all;
 }
 
-
 .nav-list {
     list-style-type: none;
     margin: 0;
@@ -96,17 +98,23 @@ button {
 }
 
 .nav-list a {
-    color: white;
+    color: red;             /* changed to red */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;  /* smooth color change */
 }
 
 .nav-list a:hover {
     text-decoration: underline;
 }
 
+.nav-list a.active {
+    text-decoration: underline;
+    color: #ff4c4c;         /* bright red for active link */
+}
+
 main {
-    padding: 20px;
+    padding: 80px 20px 20px;  /* increased top padding for fixed header */
 }
 
 h1 {
@@ -129,20 +137,21 @@ h1 {
     margin: 10px;
 }
 
- input[type=text], button.secondary, select {
-     background-color: #111;
-     transition: 0.4s border;
-     border-radius: 5px;
-     border: none;
-     font-size: 20px;
-     color: white;
-     text-align: center;
-     padding: 5px 15px;
-     margin: 5px auto;
-  }
-  input[type=text]:focus {
+input[type=text], button.secondary, select {
+    background-color: #111;
+    transition: 0.4s border;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 5px 15px;
+    margin: 5px auto;
+}
+
+input[type=text]:focus {
     outline: none;
- }
+}
 
 .game-item {
     position: relative;
@@ -155,8 +164,8 @@ h1 {
     overflow: hidden;
     text-align: center;
     cursor: pointer;
-    opacity: 0; 
-    animation: fadeIn 0.5s forwards; 
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
     text-decoration: none;
 }
 
