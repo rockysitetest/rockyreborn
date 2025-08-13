@@ -12,6 +12,43 @@
         html, body {
             height: 90%;
             margin: 0;
+            background-color: #0a0a0a;
+            color: #0ff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sticky neon header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #111;
+            padding: 10px 0;
+            z-index: 1000;
+            border-bottom: 2px solid #0ff;
+        }
+
+        nav ul.nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul.nav-list li {
+            margin: 0 15px;
+        }
+
+        nav ul.nav-list li a {
+            text-decoration: none;
+            color: #0ff;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav ul.nav-list li a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
         }
 
         .wrapper {
@@ -22,23 +59,44 @@
 
         main {
             flex: 1;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .button.play {
+            background: linear-gradient(90deg, #0ff, #ff00ff);
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button.play:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff00ff;
         }
 
         footer {
-            background-color: #222;
-            color: white;
+            background-color: #111;
+            color: #0ff;
             padding: 20px 0;
             text-align: center;
+            border-top: 2px solid #0ff;
         }
 
         footer a {
-            color: #0284d4;
+            color: #0ff;
             text-decoration: none;
             margin: 0 10px;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
         }
     </style>
 </head>
@@ -87,7 +145,7 @@
         </p>
         <p style="font-size: 20px; color: #ccc;">
             A Website Made By The Rocky Games Team. A New Rocky Team (Without Evan) Since 
-            <a href="https://howlongagogo.com/date/2023/november/26" target="_blank" style="color: #0284d4; text-decoration: none;">
+            <a href="https://howlongagogo.com/date/2023/november/26" target="_blank" style="color: #0ff; text-decoration: none;">
                 November 26th, 2023!!
             </a>
         </p>
@@ -97,13 +155,11 @@
     </footer>
 
     <script>
-        // Function for "Billy Games??" about:blank behavior
         function openInBlankTab() {
             const newTab = window.open('about:blank', '_blank');
             newTab.location.href = 'https://sites.google.com/view/dust-games';
         }
 
-        // Splash text loading from JSON
         fetch('./storage/splash.json')
             .then((res) => res.json())
             .then((data) => {
@@ -113,4 +169,3 @@
     </script>
 </body>
 </html>
-
