@@ -6,33 +6,25 @@
   <title>Rocky Reborn | Home</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Full-page layout with footer at bottom */
-    html, body {
-      height: 100%;
+    /* Full-page GIF background with dark overlay */
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
+      background: url('images/rocky-claw.gif') no-repeat center center fixed;
+      background-size: cover;
       position: relative;
     }
 
-    .wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* GIF background with dark overlay */
-    body::before {
+    body::after {
       content: '';
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('images/rocky-claw.gif') no-repeat center center fixed;
-      background-size: cover;
-      filter: brightness(50%);
+      background-color: rgba(0,0,0,0.5); /* dark overlay */
       z-index: -1;
     }
 
@@ -71,13 +63,16 @@
     }
 
     main {
-      flex: 1;
+      padding-top: 120px; /* avoid header overlap */
+      padding-bottom: 40px;
+    }
+
+    .button-row {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding-top: 100px; /* avoid header overlap */
-      padding-bottom: 20px;
+      gap: 15px; /* space between buttons */
+      flex-wrap: wrap; /* wrap to next line if screen is narrow */
+      margin-top: 20px;
     }
 
     button {
@@ -87,7 +82,6 @@
       border: none;
       font-size: 18px;
       border-radius: 5px;
-      margin: 10px;
       cursor: pointer;
       transition: 0.4s all;
     }
@@ -102,6 +96,7 @@
       padding: 20px 0;
       text-align: center;
       font-size: 14px;
+      position: relative;
     }
 
     footer a {
@@ -113,55 +108,58 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    h1 span {
+      color: #0284d4;
+    }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="gxmes.html">Games</a></li>
-          <li><a href="apps-testing.html">Apps</a></li>
-          <li><a href="discord.html">Onsite Discord</a></li>
-          <li><a href="emulator-test.html">Emulator</a></li>
-          <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-          <li><a href="new-ideas.html">New Ideas</a></li>
-          <li><a href="report-problem.html">Report a Problem</a></li>
-          <li><a href="about-rocky.html">About Rocky</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-      <h1>Welcome To <span>Rocky Reborn (Games)</span></h1>
-      <p id="splash"></p>
-      <br />
+  <main>
+    <h1>Welcome To <span>Rocky Reborn (Games)</span></h1>
+    <p id="splash"></p>
+
+    <div class="button-row">
       <button onclick="window.location.href='https://discord.gg/S7rmXwQHSv'">Join our Discord</button>
       <button onclick="window.location.href='https://sites.google.com/view/rocky-games'">Go To Our Old Site?</button>
       <button onclick="window.open('https://sites.google.com/view/dust-games', '_blank')">Billy Games??</button>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <p>
-        <a href="tos.html">Terms And Conditions (TOS)</a> |
-        <a href="privacy-policy.html">Privacy Policy</a> |
-        <a href="DMCA-Takedown.html">Copyright Takedowns</a> |
-        <a href="contact.html">Contact Us</a> |
-        <a href="thug-credits.html">Credits</a>
-      </p>
-      <p>
-        A Website Made By The Rocky Games Team. A New Rocky Team (Without Evan) Since 
-        <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
-      </p>
-      <p>
-        ⚠️ Disclaimer: All the games featured on this website are not our property, and we extend full credit to their respective developers.
-      </p>
-    </footer>
-  </div>
+  <footer>
+    <p>
+      <a href="tos.html">Terms And Conditions (TOS)</a> |
+      <a href="privacy-policy.html">Privacy Policy</a> |
+      <a href="DMCA-Takedown.html">Copyright Takedowns</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="thug-credits.html">Credits</a>
+    </p>
+    <p>
+      A Website Made By The Rocky Games Team. A New Rocky Team (Without Evan) Since 
+      <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
+    </p>
+    <p>
+      ⚠️ Disclaimer: All the games featured on this website are not our property, and we extend full credit to their respective developers.
+    </p>
+  </footer>
 
   <script>
-    // Splash text loading from JSON
     fetch('./storage/splash.json')
       .then(res => res.json())
       .then(data => {
