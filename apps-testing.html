@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Games - Work In Progress</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #111; /* dark background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-list a.active {
+      text-decoration: underline;
+      color: #0284d4;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 40px; /* space for header */
+    }
+
+    .wip-text {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .wip-text h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #0284d4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html" class="active">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wip-text">
+      <h1>Hey, Welcome to the Work In Progress Page!</h1>
+      <p>
+        If you came across this page while trying to find a game, app, or page on the Rocky Website,
+        it's possible that the game, app, or page you are trying to access does not work at the moment
+        or the link is broken.
+      </p>
+      <p><strong>Some Reasons You May See This Page Are:</strong></p>
+      <ul>
+        <li>The Game, App, or Page is not ready</li>
+        <li>It has not been tested for "Quality Assurance"</li>
+        <li>It's not ready to be released to the public</li>
+        <li>It's a Dev-Only Page that only Rocky Devs can see for the moment</li>
+      </ul>
+      <p>Thanks For Your Understanding,<br>-The Rocky Games Team.</p>
+    </div>
+  </main>
+</body>
+</html>
