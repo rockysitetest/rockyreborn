@@ -53,36 +53,39 @@
       text-decoration: underline;
     }
 
+    /* Hero GIF with overlay */
     .hero {
-      margin-top: 60px; /* space for fixed header */
       position: relative;
       width: 100%;
-      height: 300px; /* cut off at intro text */
+      height: 400px;
       overflow: hidden;
+      margin-top: 60px; /* space for fixed header */
     }
 
     .hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(50%); /* make GIF darker */
+      filter: brightness(50%);
     }
 
-    .intro {
-      background-color: black;
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
-      padding: 20px;
+      text-align: center;
       max-width: 800px;
-      margin: -50px auto 40px; /* overlay on hero bottom */
-      border-radius: 8px;
-      font-size: 16px;
-      line-height: 1.5;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.5); /* semi-transparent overlay behind text */
+      border-radius: 10px;
     }
 
     .credits-list {
       max-width: 800px;
-      margin: 0 auto 40px;
-      text-align: center; /* centered text */
+      margin: 40px auto;
+      text-align: center;
       font-size: 18px;
       line-height: 1.8;
       padding: 0 20px;
@@ -117,12 +120,10 @@
   <!-- Hero GIF -->
   <div class="hero">
     <img src="images/rocky-city.gif" alt="Rocky City">
-  </div>
-
-  <!-- Page Title and Intro -->
-  <div class="intro">
-    <h1>Credits of Rocky Games (Reborn)</h1>
-    <p>This page contains all the Devs/People that have created or helped with the creation of Rocky Games/Reborn.</p>
+    <div class="hero-text">
+      <h1>Credits of Rocky Games (Reborn)</h1>
+      <p>This page contains all the Devs/People that have created or helped with the creation of Rocky Games/Reborn.</p>
+    </div>
   </div>
 
   <!-- Credits List -->
