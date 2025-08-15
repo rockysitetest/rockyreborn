@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Games | Credits</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="rocky-favicon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Full-page GIF background with dark overlay */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('images/rocky-city.gif') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6); /* dark overlay */
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    main {
+      padding-top: 120px; /* avoid header overlap */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 span {
+      color: #0284d4;
+    }
+
+    .credits-list {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .credits-list p {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Credits <span>Rocky Games Team</span></h1>
+
+    <div class="credits-list">
+      <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
+      <p><strong>YouCanTrustMe (Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/23 😎🙍🏻‍♂️</p>
+      <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of games and has fixed some bugs. 🙍🏼‍♂️🪖</p>
+      <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
+      <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Games Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
+      <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough Games</p>
+      <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
+    </div>
+  </main>
+</body>
+</html>
