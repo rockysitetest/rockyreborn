@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Reborn | Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 15px auto;
+      max-width: 900px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+    }
+
+    button {
+      background-color: #0284d4;
+      color: black;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #026bb2;
+    }
+
+    .last-updated {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Us</h1>
+  <p>If you have any questions, suggestions, or feedback, please reach out to the Rocky Games Team using the form below.</p>
+
+  <form action="mailto:Rockygamesdevteam@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p class="last-updated">Last Updated: 8/15/2025</p>
+
+</body>
+</html>
