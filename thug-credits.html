@@ -12,30 +12,16 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Full-page GIF background with dark overlay */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-      background: url('images/rocky-city.gif') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6); /* dark overlay */
-      z-index: -1;
+      background-color: #000;
     }
 
     header {
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0,0,0,0.8);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -60,7 +46,6 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      transition: color 0.3s;
     }
 
     .nav-list a:hover {
@@ -68,35 +53,39 @@
       text-decoration: underline;
     }
 
-    main {
-      padding-top: 120px; /* avoid header overlap */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto;
+    .hero {
+      margin-top: 60px; /* space for fixed header */
+      position: relative;
+      width: 100%;
+      height: 300px; /* cut off at intro text */
+      overflow: hidden;
     }
 
-    h1 span {
-      color: #0284d4;
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%); /* make GIF darker */
     }
 
     .intro {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      max-width: 800px;
+      margin: -50px auto 40px; /* overlay on hero bottom */
+      border-radius: 8px;
       font-size: 16px;
-      margin-top: 20px;
-      margin-bottom: 40px;
-      text-align: center;
-      max-width: 700px;
       line-height: 1.5;
-      color: #ccc;
     }
 
     .credits-list {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: left;
       font-size: 18px;
       line-height: 1.8;
+      padding: 0 20px;
     }
 
     .credits-list p {
@@ -121,21 +110,25 @@
     </nav>
   </header>
 
-  <main>
-    <h1>Creators of <span>Rocky Reborn</span></h1>
-    <p class="intro">
-      This page contains all the Devs/People that have created or helped with the creation of Rocky Games/Reborn.
-    </p>
+  <!-- Hero GIF -->
+  <div class="hero">
+    <img src="images/rocky-city.gif" alt="Rocky City">
+  </div>
 
-    <div class="credits-list">
-      <p><strong>Angel (Lead Dev/Owner)</strong> - Added 60+ games, created forms, and made the site possible. 👩‍❤️‍👨👑</p>
-      <p><strong>YouCanTrustMe (Dev)</strong> - Made homepage changes, added emojis, and got a referral on 2/13/23 😎🙍🏻‍♂️</p>
-      <p><strong>IDKShockwave (Lead Dev)</strong> - Promoted the site via YT Short, added games, and fixed bugs 🙍🏼‍♂️🪖</p>
-      <p><strong>AnonyMan1 (Lead Dev)</strong> - Longtime contributor, added lots of content 👯‍♀️🐵</p>
-      <p><strong>Babahorse (Rocky Dev)</strong> - Created the Rocky Games name and logo idea 🥷🏻🧞‍♂️</p>
-      <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - Made old website “Rough Games”</p>
-      <p><strong>Krisvic10 (Ex-Dev?)</strong> - Designed the Rocky Logo we love today 🫶🦁</p>
-    </div>
-  </main>
+  <!-- Intro Text -->
+  <div class="intro">
+    This page contains all the Devs/People that have created or helped with the creation of Rocky Games/Reborn.
+  </div>
+
+  <!-- Credits List -->
+  <div class="credits-list">
+    <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
+    <p><strong>YouCanTrustMe (Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/23 😎🙍🏻‍♂️</p>
+    <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of games and has fixed some bugs. 🙍🏼‍♂️🪖</p>
+    <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
+    <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Games Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
+    <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough Games</p>
+    <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
+  </div>
 </body>
 </html>
