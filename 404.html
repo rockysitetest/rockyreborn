@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Page Not Found | Rocky Games</title>
+  <title>Rocky Games | 404 Not Found</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="rocky-favicon.png">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #000;
       color: white;
       text-align: center;
+      background-color: #000;
     }
 
     header {
@@ -29,10 +32,11 @@
       justify-content: center;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     .nav-list li {
-      margin: 0 15px;
+      margin: 0 10px;
     }
 
     .nav-list a {
@@ -47,28 +51,27 @@
       text-decoration: underline;
     }
 
+    /* Hero image full-page */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      margin-top: 60px; /* space for header */
     }
 
     .hero img {
-      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
       filter: brightness(40%);
-      z-index: 0;
     }
 
     .hero-text {
-      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
       text-align: center;
       max-width: 800px;
@@ -76,20 +79,19 @@
     }
 
     .hero-text h1 {
-      font-size: 80px;
-      margin: 0;
+      font-size: 60px;
+      margin-bottom: 20px;
     }
 
     .hero-text p {
       font-size: 24px;
-      margin: 20px 0;
+      margin-bottom: 15px;
     }
 
     .hero-text a {
       color: #0284d4;
-      font-weight: bold;
       text-decoration: none;
-      font-size: 20px;
+      font-weight: bold;
     }
 
     .hero-text a:hover {
@@ -103,18 +105,23 @@
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
         <li><a href="about-rocky.html">About Rocky</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="hero">
-    <img src="images/rocky-space.jpeg" alt="Rocky Space">
+    <img src="images/rocky-space.jpeg" alt="Rocky 404">
     <div class="hero-text">
-      <h1>404</h1>
-      <p>Oops! The page you are looking for cannot be found.</p>
-      <p><a href="index.html">Go back to Home</a></p>
+      <h1>404 - Page Not Found</h1>
+      <p>Oops! It seems the page/game/ape you are looking for doesn’t exist.</p>
+      <p>Return to <a href="index.html">Home</a> or check our <a href="gxmes.html">Games</a>.</p>
     </div>
   </div>
 </body>
