@@ -4,118 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Rocky Games (Reborn)</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Background with GIF and dark overlay */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: black;
       color: white;
-      background: url('images/rocky-city.gif') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      min-height: 100vh;
+      text-align: center;
     }
 
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6); /* dark overlay */
-      z-index: -1;
-    }
-
-    /* Header similar to New Ideas page */
     header {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-list li {
-      margin: 0 15px;
-    }
-
-    .nav-list a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    .nav-list a:hover {
-      color: #0284d4;
-      text-decoration: underline;
-    }
-
-    .nav-list a.active {
-      text-decoration: underline;
-      color: #0284d4;
-    }
-
-    main {
+      position: relative;
+      background: url('images/rocky-city.jpeg') no-repeat center center;
+      background-size: cover;
+      height: 300px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 100px 20px 40px; /* padding-top for fixed header */
-      min-height: calc(100vh - 100px);
+      color: white;
+      text-shadow: 2px 2px 6px black;
     }
 
-    h1 span {
-      color: #0284d4;
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin: 10px 20px;
+      max-width: 800px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: black;
     }
 
     p {
-      max-width: 800px;
-      font-size: 18px;
+      font-size: 1.1em;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gxmes.html">Games</a></li>
-        <li><a href="apps-testing.html">Apps</a></li>
-        <li><a href="discord.html">Onsite Discord</a></li>
-        <li><a href="emulator-test.html">Emulator</a></li>
-        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-        <li><a href="new-ideas.html">New Ideas</a></li>
-        <li><a href="report-problem.html">Report a Problem</a></li>
-        <li><a href="about-rocky.html" class="active">About Rocky</a></li>
-      </ul>
-    </nav>
+    <h1>About Rocky Reborn</h1>
+    <p>Learn more about the team and the mission behind Rocky Games.</p>
   </header>
 
   <main>
-    <h1>About <span>Rocky Games (Reborn)</span></h1>
-    <p>Hello And Welcome To Rocky Games (Reborn)!</p>
-    <p>
-      Rocky Games is your ultimate gaming hub where you can find some of the best games. Rocky Games was founded in November 2023. Our Team has curated a diverse collection of top-notch games, all in one convenient website. Whether you're a casual player or a hardcore gamer, Rocky Games is your go-to destination for fun single-player and multiplayer experiences. Join our community, discuss strategies, and stay updated on the latest gaming news at Rocky Games. We've dedicated our lives for this website. We're your shortcut to gaming excitement, all in one place.
-    </p>
+    <p>Hello And Welcome To Rocky Games!</p>
+    <p>Rocky Games is your ultimate gaming hub where you can find some of the best games. Rocky Games was founded in November 2023. Our Team has curated a diverse collection of top-notch games, all in one convenient website. Whether you're a casual player or a hardcore gamer, Rocky Games is your go-to destination for fun single-player and multiplayer experiences. Join our community, discuss strategies, and stay updated on the latest gaming news at Rocky Games. We've dedicated our lives for this website. We're your shortcut to gaming excitement, all in one place.</p>
     <p>Please Note that Rocky Games is still in development and a Work in Progress, so you may notice some bugs in your gameplay.</p>
     <p>Our Team Hopes You Will Enjoy Your Stay At Rocky Games.</p>
     <p>Stay Rocky, Players</p>
-    <p>- The Rocky Games (Reborn) Team</p>
+    <p>-The Rocky Games Team</p>
   </main>
+
 </body>
 </html>
