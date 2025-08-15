@@ -1,111 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rocky Games - Onsite Discord</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      text-align: center;
-      color: white;
-      height: 100vh;
-      overflow: hidden; /* Prevent scrollbars */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky Games - Onsite DC</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+        }
 
-    header {
-      background-color: #333;
-      padding: 10px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+        /* Header */
+        header {
+            background-color: #111;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .nav-list {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        header img {
+            height: 50px;
+        }
 
-    .nav-list li {
-      margin-right: 20px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 16px;
+        }
 
-    .nav-list a {
-      color: white; /* Changed text to red */
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
+        nav a:hover {
+            color: #ffcc00;
+        }
 
-    .nav-list a:hover {
-      text-decoration: underline;
-    }
-
-    .nav-list a.active {
-      text-decoration: underline;
-      color: #0284d4;
-    }
-
-    main {
-      padding-top: 50px; /* Matches header height */
-      height: calc(100vh - 50px); /* Fill rest of the screen */
-    }
-
-    .frame {
-      border: none;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-  </style>
+        /* Chat embed */
+        iframe {
+            border: none;
+            width: 100%;
+            height: calc(100vh - 80px); /* Adjust for header height */
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gxmes.html">Games</a></li>
-        <li><a href="apps-testing.html">Apps</a></li>
-        <li><a href="discord.html">Onsite Discord</a></li>
-        <li><a href="emulator-test.html">Emulator</a></li>
-        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-        <li><a href="new-ideas.html">New Ideas</a></li>
-        <li><a href="report-problem.html">Report a Problem</a></li>
-        <li><a href="about-rocky.html">About Rocky</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header>
+        <img src="rocky-logo.png" alt="Rocky Games Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="discord.html">Discord</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <main>
-    <iframe
-      class="frame"
-      src="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </main>
-
-  <script>
-    const navLinks = document.querySelectorAll('.nav-list a');
-    const currentPage = window.location.pathname.split("/").pop();
-
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage || 
-          (currentPage === '' && link.getAttribute('href') === 'index.html')) {
-        link.classList.add('active');
-      }
-    });
-  </script>
+    <!-- Discord Embed -->
+    <iframe src="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615"></iframe>
 
 </body>
 </html>
