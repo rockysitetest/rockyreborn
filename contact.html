@@ -3,83 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Reborn | Contact Us</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact Us | Rocky Games</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="rocky-favicon.png">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      background-color: #000;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    /* Hero GIF with overlay */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-top: 60px; /* space for fixed header */
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .contact-text {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.8;
+      padding: 0 20px;
+    }
+
+    .contact-text p {
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin: 15px auto;
-      max-width: 900px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    input, textarea {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-      width: 100%;
-    }
-
-    button {
-      background-color: #0284d4;
-      color: black;
-      padding: 12px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #026bb2;
-    }
-
-    .last-updated {
-      font-weight: bold;
-      margin-top: 20px;
-      font-size: 0.95em;
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h1>Contact Us</h1>
-  <p>If you have any questions, suggestions, or feedback, please reach out to the Rocky Games Team using the form below.</p>
-
-  <form action="mailto:Rockygamesdevteam@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="subject" placeholder="Subject" required>
-    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-
-  <p class="last-updated">Last Updated: 8/15/2025</p>
-
+  <!-- Hero GIF -->
+  <div class="hero">
+    <img src="images/rocky-claw.gif" alt="Rocky Claw">
+    <div class="hero-text">
+      <h1>Contact Us</h1>
+      <p>If you would like to contact us please Email us at: <a href="mailto:Rockygamesdevteam@gmail.com" style="color:#0284d4;">Rockygamesdevteam@gmail.com</a></p>
+    </div>
+  </div>
 </body>
 </html>
