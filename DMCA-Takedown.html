@@ -3,104 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Reborn | DMCA Takedowns</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Rocky Games - DMCA Takedowns</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
+      background-color: #111; /* dark background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       text-align: center;
-      background-color: black;
     }
 
     header {
-      background: url('images/rocky-space.jpeg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      color: white;
-      padding: 120px 20px 60px;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 0;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h1, header p, header span {
-      position: relative;
-      z-index: 1;
-      margin: 0 auto;
-      max-width: 900px;
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
     }
 
-    header p {
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-      font-size: 1.2em;
-      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .nav-list a.active {
+      text-decoration: underline;
+      color: #0284d4;
     }
 
     main {
-      background-color: black;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: -60px auto 0;
-      text-align: center;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 40px; /* space for header */
     }
 
-    main h2 {
-      margin-top: 25px;
+    .wip-text {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
     }
 
-    main a {
+    .wip-text h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
       color: #0284d4;
-      text-decoration: none;
-    }
-
-    main a:hover {
-      text-decoration: underline;
-    }
-
-    .last-updated {
-      font-weight: bold;
-      margin-bottom: 25px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>DMCA Takedowns</h1>
-    <p>This page contains all the steps to remove games that are your intellectual property from Rocky Games/Reborn.</p>
-    <span class="last-updated">Last Updated: 8/15/2025</span>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="apps-testing.html" class="active">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <p>Before you start, please follow these instructions if you want to take down a game that is yours.</p>
-    
-    <p>Most of these games are typically added in response to user requests, which means it can make it challenging to ascertain their copyright status. If you suspect that a particular game contains copyrighted and protected content, we are committed to promptly removing it from our website and ensuring its removal from our Google searches.</p>
-    
-    <p>Please contact: <a href="mailto:Rockygamesdevteam@gmail.com">Rockygamesdevteam@gmail.com</a></p>
-    
-    <p>To initiate the removal process for copyrighted content, please contact us via a corporate email address.</p>
-    
-    <h2>Why Corporate Email?</h2>
-    <p><strong>Preventing False Copyright Claims:</strong> By using corporate email addresses, we can verify the authenticity of copyright claims, mitigating the risk of false reports.</p>
-    <p><strong>Swift Resolution:</strong> Our goal is to remove copyrighted content within 24 hours of receiving a copyright takedown email, ensuring a swift resolution for copyright holders.</p>
-    <p><strong>Support for Game Owners:</strong> This process guarantees that we honor only legitimate claims from official game owners.</p>
-    
-    <p>Our primary objective is to maintain the integrity of copyright protection. When you reach out to us through a corporate email, we can swiftly act to remove the content from Google and our site.</p>
-    
-    <p>Thank you for your understanding,</p>
-    
-    <p><strong>-The Rocky Games Team!</strong></p>
+    <div class="wip-text">
+      <h1>Hey, Welcome to the Work In Progress Page!</h1>
+      <p>
+        If you came across this page while trying to find a game, app, or page on the Rocky Website,
+        it's possible that the game, app, or page you are trying to access does not work at the moment
+        or the link is broken.
+      </p>
+      <p><strong>Some Reasons You May See This Page Are:</strong></p>
+      <ul>
+        <li>The Game, App, or Page is not ready</li>
+        <li>It has not been tested for "Quality Assurance"</li>
+        <li>It's not ready to be released to the public</li>
+        <li>It's a Dev-Only Page that only Rocky Devs can see for the moment</li>
+      </ul>
+      <p>Thanks For Your Understanding,<br>-The Rocky Games Team.</p>
+    </div>
   </main>
-
 </body>
 </html>
