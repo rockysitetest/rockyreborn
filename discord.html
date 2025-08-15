@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Games - Onsite DC</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: white;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Games - Onsite Discord</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Header */
-        header {
-            background-color: #111;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-        header img {
-            height: 50px;
-        }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 16px;
-        }
+    .nav-list li {
+      margin: 0 15px;
+    }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-        /* Chat embed */
-        iframe {
-            border: none;
-            width: 100%;
-            height: calc(100vh - 80px); /* Adjust for header height */
-        }
-    </style>
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: calc(100vh - 60px); /* Adjusted for header height */
+      margin-top: 60px; /* Prevent overlap with fixed header */
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <img src="rocky-logo.png" alt="Rocky Games Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="games.html">Games</a>
-            <a href="discord.html">Discord</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gxmes.html">Games</a></li>
+      <li><a href="apps-testing.html">Apps</a></li>
+      <li><a href="discord.html" style="color: #0284d4;">Onsite Discord</a></li>
+      <li><a href="emulator-test.html">Emulator</a></li>
+      <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+      <li><a href="new-ideas.html">New Ideas</a></li>
+      <li><a href="report-problem.html">Report a Problem</a></li>
+      <li><a href="about-rocky.html">About Rocky</a></li>
+    </ul>
+  </header>
 
-    <!-- Discord Embed -->
-    <iframe src="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615"></iframe>
+  <!-- WidgetBot Embed -->
+  <iframe src="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615"></iframe>
 
 </body>
 </html>
