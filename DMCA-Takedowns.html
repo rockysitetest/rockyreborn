@@ -13,24 +13,59 @@
       text-align: center;
     }
 
+    /* Top navigation header */
     header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    /* Rocky Space Hero section */
+    .hero {
       background: url('rocky-space.png') no-repeat center center/cover;
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
+      margin-top: 60px; /* offset for fixed header */
       position: relative;
     }
 
-    header h1 {
+    .hero h1 {
       font-size: 40px;
       font-weight: bold;
-      margin: 0;
+      color: white;
       text-shadow: 2px 2px 8px black;
     }
 
+    /* Page content */
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -58,10 +93,28 @@
 </head>
 <body>
 
+  <!-- Header navigation -->
   <header>
-    <h1>DMCA Takedowns</h1>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gxmes.html">Games</a></li>
+      <li><a href="apps-testing.html">Apps</a></li>
+      <li><a href="discord.html">Onsite Discord</a></li>
+      <li><a href="emulator-test.html">Emulator</a></li>
+      <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+      <li><a href="new-ideas.html">New Ideas</a></li>
+      <li><a href="report-problem.html">Report a Problem</a></li>
+      <li><a href="about-rocky.html">About Rocky</a></li>
+      <li><a href="dmca.html">DMCA</a></li>
+    </ul>
   </header>
 
+  <!-- Hero section -->
+  <div class="hero">
+    <h1>DMCA Takedowns / Copyright</h1>
+  </div>
+
+  <!-- Page content -->
   <main>
     <p><b>If You Would Like To Take Down A Game That Is Yours Please Follow These Steps.</b></p>
 
