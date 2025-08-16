@@ -7,12 +7,13 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: black;
       color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
     }
 
+    /* Top navigation header */
     header {
       background-color: rgba(0,0,0,0.8);
       padding: 10px 0;
@@ -46,38 +47,53 @@
       text-decoration: underline;
     }
 
+    /* Rocky Space Hero section */
     .hero {
-      background: url('rocky-space.png') no-repeat center center/cover;
+      background: url('rocky-space.jpeg') no-repeat center center/cover;
       height: 300px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: white;
-      text-align: center;
-      margin-top: 60px; /* offset for header */
+      justify-content: center;
+      margin-top: 60px; /* offset for fixed header */
+      position: relative;
     }
 
     .hero h1 {
-      font-size: 36px;
-      background: rgba(0, 0, 0, 0.6);
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    /* Page content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
+      background: rgba(0,0,0,0.7);
       border-radius: 10px;
     }
 
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
+    main h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-decoration: underline;
     }
 
-    h2, h3 {
-      color: #0284d4;
+    main p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    b {
+      color: #ffcc00;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header navigation -->
   <header>
     <ul class="nav-list">
       <li><a href="index.html">Home</a></li>
@@ -89,39 +105,52 @@
       <li><a href="new-ideas.html">New Ideas</a></li>
       <li><a href="report-problem.html">Report a Problem</a></li>
       <li><a href="about-rocky.html">About Rocky</a></li>
+      <li><a href="dmca.html">DMCA</a></li>
     </ul>
   </header>
 
-  <section class="hero">
+  <!-- Hero section -->
+  <div class="hero">
     <h1>DMCA Takedowns / Copyright</h1>
-  </section>
+  </div>
 
+  <!-- Page content -->
   <main>
-    <h2>If You Would Like To Take Down A Game That Is Yours Please Follow These Steps</h2>
+    <p><b>If You Would Like To Take Down A Game That Is Yours Please Follow These Steps.</b></p>
+
     <p>
-      Most of these games are typically added in response to user requests, which means it can be challenging to ascertain their copyright status. 
-      If you suspect that a particular game contains copyrighted and protected content, we are committed to promptly removing it 
-      from our website and ensuring its removal from Google searches.
+      Most of these games are typically added in response to user requests, which means, 
+      it can make it challenging to ascertain their copyright status. 
+      If you suspect that a particular game contains copyrighted 
+      and protected content, we are committed to promptly removing it from our website 
+      and ensuring its removal from our Google searches.
     </p>
 
-    <h3>Contact Information</h3>
+    <h2>Contact Information</h2>
     <p>
-      Please contact us at: <b>Rockygamesdevteam@gmail.com</b>
-    </p>
-    <p>
-      To initiate the removal process for copyrighted content, please contact us via a <b>corporate email address</b>.
+      Please contact us at: <b>Rockygamesdevteam@gmail.com</b><br><br>
+      To initiate the removal process for copyrighted content, 
+      please contact us via a <b>corporate email address</b>.
     </p>
 
-    <h3>Why Corporate Email?</h3>
-    <ul>
-      <li>✅ <b>Preventing False Copyright Claims:</b> By using corporate email addresses, we can verify the authenticity of copyright claims, mitigating the risk of false reports.</li>
-      <li>✅ <b>Swift Resolution:</b> Our goal is to remove copyrighted content within 24 hours of receiving a copyright takedown email, ensuring a swift resolution for copyright holders.</li>
-      <li>✅ <b>Support for Game Owners:</b> This process guarantees that we honor only legitimate claims from official game owners.</li>
-    </ul>
+    <h2>Why Corporate Email?</h2>
+    <p>
+      ✅ <b>Preventing False Copyright Claims:</b> By using corporate email addresses, we can 
+      verify the authenticity of copyright claims, mitigating the risk of false reports.
+    </p>
+    <p>
+      ✅ <b>Swift Resolution:</b> Our goal is to remove copyrighted content within 24 hours of 
+      receiving a copyright takedown email, ensuring a swift resolution for copyright holders.
+    </p>
+    <p>
+      ✅ <b>Support for Game Owners:</b> This process guarantees that we honor only legitimate 
+      claims from official game owners.
+    </p>
 
     <p>
       Our primary objective is to maintain the integrity of copyright protection. 
-      When you reach out to us through a corporate email, we can swiftly act to remove the content from Google and our site.
+      When you reach out to us through a corporate email, we can swiftly act to remove the 
+      content from Google and our site.
     </p>
 
     <p>Thank you for your understanding,</p>
