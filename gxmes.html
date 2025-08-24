@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games - Rocky Space</title>
+  <title>Games - Rocky Reborn</title>
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
 
   <style>
@@ -56,7 +56,7 @@
 
     .banner img {
       width: 100%;
-      height: 350px;
+      height: 450px; /* slightly bigger */
       object-fit: cover;
       display: block;
     }
@@ -67,7 +67,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55); /* darker overlay */
     }
 
     .banner-text {
@@ -75,7 +75,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 56px;
+      font-size: 60px;
       font-weight: bold;
       color: white;
       text-shadow: 2px 2px 5px black;
@@ -86,7 +86,7 @@
     .game-info {
       text-align: center;
       padding: 20px;
-      font-size: 16px;
+      font-size: 18px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -103,18 +103,19 @@
     }
 
     .search-bar input {
-      padding: 8px;
-      font-size: 14px;
+      padding: 10px;
+      font-size: 16px;
       width: 250px;
       border-radius: 5px;
       border: none;
+      text-align: center;
     }
 
     /* Game Grid */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 15px;
+      gap: 10px;
       padding: 20px;
       max-width: 1300px;
       margin: 0 auto;
@@ -127,10 +128,10 @@
       text-align: center;
       transition: transform 0.2s;
       cursor: pointer;
-      height: 180px; /* taller box */
+      height: 230px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .game-card:hover {
@@ -140,7 +141,7 @@
 
     .game-card img {
       width: 100%;
-      height: 120px;
+      height: 160px;
       object-fit: cover;
       border-radius: 5px;
     }
@@ -192,11 +193,11 @@
 
   <!-- Search -->
   <div class="search-bar">
-    <input type="text" placeholder="Search games...">
+    <input type="text" placeholder="Search games..." id="gameSearch">
   </div>
 
   <!-- Game Grid -->
-  <div class="game-grid">
+  <div class="game-grid" id="gameGrid">
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 1">
       <p>Game 1</p>
@@ -221,8 +222,22 @@
       <img src="images/game-placeholder.png" alt="Game 6">
       <p>Game 6</p>
     </a>
-    <!-- Add more later -->
   </div>
+
+  <script>
+    // Real-time search
+    const searchInput = document.getElementById('gameSearch');
+    const gameGrid = document.getElementById('gameGrid');
+    const games = gameGrid.getElementsByClassName('game-card');
+
+    searchInput.addEventListener('input', function() {
+      const filter = searchInput.value.toLowerCase();
+      Array.from(games).forEach(function(game) {
+        const name = game.querySelector('p').textContent.toLowerCase();
+        game.style.display = name.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
