@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Reborn - Games</title>
+  <title>Rocky Games - Games</title>
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
   <style>
     body {
@@ -54,7 +54,7 @@
 
     .banner img {
       width: 100%;
-      height: 350px; /* bigger */
+      height: 350px;
       object-fit: cover;
     }
 
@@ -69,6 +69,19 @@
       text-shadow: 2px 2px 5px black;
     }
 
+    /* Info section */
+    .game-info {
+      text-align: center;
+      margin: 20px auto;
+      width: 85%;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .red { color: red; font-weight: bold; }
+    .blue { color: #1e90ff; font-weight: bold; }
+    .green { color: limegreen; font-weight: bold; }
+
     /* Search bar */
     .search-bar {
       text-align: center;
@@ -76,7 +89,7 @@
     }
 
     .search-bar input {
-      width: 40%; /* smaller */
+      width: 40%;
       padding: 8px;
       font-size: 16px;
       border-radius: 5px;
@@ -86,8 +99,8 @@
     /* Game grid */
     .game-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr); /* 6 across */
-      gap: 15px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px; /* smaller gap so closer side-to-side */
       padding: 20px;
     }
 
@@ -106,7 +119,7 @@
 
     .game-card img {
       width: 100%;
-      height: 120px; /* smaller image inside cards */
+      height: 160px; /* taller image area */
       object-fit: cover;
     }
 
@@ -136,6 +149,20 @@
   <div class="banner">
     <img src="images/real-rocky-water.gif" alt="Rocky Water">
     <div class="banner-text">Games</div>
+  </div>
+
+  <!-- Info Text -->
+  <div class="game-info">
+    <p>
+      Here are some games. (Most games shouldn't be blocked on school devices, some games might take a bit to load.)  
+      If a game doesn't work please report it on the <strong>Report An Issue</strong> page;  
+      For game ideas submit them on the <strong>New Game/App Ideas</strong> page. 🤩
+    </p>
+    <p>
+      <span class="red">RED NAMES</span> = Blocked on school devices.  
+      <span class="blue">BLUE NAMES</span> = Not the real game but similar.  
+      <span class="green">GREEN NAMES</span> = Proxied game 🥵🥶
+    </p>
   </div>
 
   <!-- Search -->
