@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Games - Games</title>
+  <title>Games - Rocky Space</title>
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
+
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #111;
+      margin: 0;
+      background: #111;
       color: white;
     }
 
+    /* Header */
     header {
       background-color: rgba(0,0,0,0.8);
       padding: 10px 0;
@@ -56,6 +58,16 @@
       width: 100%;
       height: 350px;
       object-fit: cover;
+      display: block;
+    }
+
+    .banner .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .banner-text {
@@ -67,70 +79,82 @@
       font-weight: bold;
       color: white;
       text-shadow: 2px 2px 5px black;
+      z-index: 1;
     }
 
-    /* Info section */
+    /* Info text */
     .game-info {
       text-align: center;
-      margin: 20px auto;
-      width: 85%;
+      padding: 20px;
       font-size: 16px;
-      line-height: 1.5;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .red { color: red; font-weight: bold; }
     .blue { color: #1e90ff; font-weight: bold; }
-    .green { color: limegreen; font-weight: bold; }
+    .green { color: #28a745; font-weight: bold; }
 
-    /* Search bar */
+    /* Search Bar */
     .search-bar {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       margin: 20px 0;
     }
 
     .search-bar input {
-      width: 40%;
       padding: 8px;
-      font-size: 16px;
+      font-size: 14px;
+      width: 250px;
       border-radius: 5px;
       border: none;
     }
 
-    /* Game grid */
+    /* Game Grid */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 10px; /* smaller gap so closer side-to-side */
+      gap: 15px;
       padding: 20px;
+      max-width: 1300px;
+      margin: 0 auto;
     }
 
     .game-card {
       background: #222;
       border-radius: 8px;
-      overflow: hidden;
+      padding: 10px;
       text-align: center;
       transition: transform 0.2s;
+      cursor: pointer;
+      height: 180px; /* taller box */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .game-card:hover {
       transform: scale(1.05);
-      cursor: pointer;
+      background: #333;
     }
 
     .game-card img {
       width: 100%;
-      height: 160px; /* taller image area */
+      height: 120px;
       object-fit: cover;
+      border-radius: 5px;
     }
 
     .game-card p {
-      margin: 8px 0;
+      margin: 8px 0 0;
       font-size: 14px;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <ul class="nav-list">
       <li><a href="index.html">Home</a></li>
@@ -148,46 +172,46 @@
   <!-- Banner -->
   <div class="banner">
     <img src="images/real-rocky-water.gif" alt="Rocky Water">
+    <div class="overlay"></div>
     <div class="banner-text">Games</div>
   </div>
 
-  <!-- Info Text -->
+  <!-- Info -->
   <div class="game-info">
     <p>
       Here are some games. (Most games shouldn't be blocked on school devices, some games might take a bit to load.)  
-      If a game doesn't work please report it on the <strong>Report An Issue</strong> page;  
-      For game ideas submit them on the <strong>New Game/App Ideas</strong> page. 🤩
+      If a game doesn't work please report it on the <b>Report An Issue</b> Page;  
+      For game ideas submit them on the <b>New Game/App Ideas</b> page. 🤩
     </p>
     <p>
       <span class="red">RED NAMES</span> = Blocked on school devices.  
-      <span class="blue">BLUE NAMES</span> = Not the real game but similar.  
-      <span class="green">GREEN NAMES</span> = Proxied game 🥵🥶
+      <span class="blue">BLUE NAME</span> = Not the real game but similar.  
+      <span class="green">GREEN NAME</span> = Proxied game 🥵🥶
     </p>
   </div>
 
   <!-- Search -->
   <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search for a game...">
+    <input type="text" placeholder="Search games...">
   </div>
 
   <!-- Game Grid -->
-  <div class="game-grid" id="gameGrid">
-    <!-- Example Game Cards -->
+  <div class="game-grid">
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 1">
       <p>Game 1</p>
     </a>
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 2">
-      <p>Game 2</p>
+      <p class="red">Game 2</p>
     </a>
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 3">
-      <p>Game 3</p>
+      <p class="blue">Game 3</p>
     </a>
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 4">
-      <p>Game 4</p>
+      <p class="green">Game 4</p>
     </a>
     <a href="work-in-progress.html" class="game-card">
       <img src="images/game-placeholder.png" alt="Game 5">
@@ -197,18 +221,8 @@
       <img src="images/game-placeholder.png" alt="Game 6">
       <p>Game 6</p>
     </a>
+    <!-- Add more later -->
   </div>
 
-  <script>
-    // Search filter
-    document.getElementById("searchInput").addEventListener("keyup", function() {
-      let filter = this.value.toLowerCase();
-      let games = document.querySelectorAll(".game-card");
-      games.forEach(game => {
-        let text = game.innerText.toLowerCase();
-        game.style.display = text.includes(filter) ? "" : "none";
-      });
-    });
-  </script>
 </body>
 </html>
