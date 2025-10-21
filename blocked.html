@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Web Page Blocked!</title>
   <style>
-    :root{
-      --bg:#235c86;
-      --card:#dce8f1;
-      --card-border:#0b2740;
-    }
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:#222;
-      padding:30px;
+    body {
+      background-color: #2b5d8c;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 50px 10px;
+      color: #333;
     }
 
-    .container{
-      position:relative;           /* allows absolute positioning of the seal */
-      width:min(86%, 920px);
-      box-shadow:0 2px 0 var(--card-border);
+    .page {
+      background-color: #dce8f1;
+      border-radius: 4px;
+      padding: 40px;
+      display: inline-block;
+      max-width: 800px;
+      text-align: center;
     }
 
-    /* seal sits above the card, centered */
     .seal {
-      position:absolute;
-      top:-36px;                   /* pulls the seal above the card */
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      pointer-events:none;         /* non-interactive */
-    }
-    .seal img{
-      width:96px;                  /* adjust size as needed */
-      height:auto;
-      display:block;
-      border-radius:6px;           /* optional */
-      background:transparent;
+      margin-bottom: 10px;
     }
 
-    .card{
-      background:var(--card);
-      padding:56px 40px 40px;
-      border-radius:2px;
-      text-align:center;
+    .seal img {
+      width: 80px;
+      height: auto;
     }
 
-    h1{ color:#c61b1b; margin-top:0; }
-    .meta { color:#666; font-size:14px; margin:14px 0; }
-    .small { font-size:12px; color:#445; margin-top:8px; }
-    @media (max-width:420px){
-      .seal img { width:72px; }
-      .card { padding:46px 20px 28px; }
+    h1 {
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .category {
+      font-weight: bold;
+      margin-top: 8px;
+      color: #c00;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #555;
+      margin-top: 25px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        width: 95%;
+        padding: 25px 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Seal: use relative path to the uploaded image -->
-    <div class="seal" aria-hidden="true">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbVLz_qR_itDSyI5E1QxluA-RKxdTT7ocVLr3B4Jh8r9qGDbYHJsKbHMXhqssKgCJk75o&usqp=CAU" alt="Great Seal of the State of Delaware">
+  <div class="page">
+    <div class="seal">
+      <!-- You can upload a seal image to your repo (images/seal.png) and link it below -->
+      <img src="https://www.countryreports.org/cdn/c3RhdGVzL3N5bWJvbHMvZGVzdGF0ZXNlYWwuanBn/ZXhXPTMwMA==.htp?ext=jpg" alt="Great Seal of the State of Delaware">
     </div>
 
-    <div class="card">
-      <h1>Web Page Blocked!</h1>
-      <p class="meta">You have tried to access a web page which is in violation of your internet usage policy.</p>
-      <p><strong>URL:</strong> driftboss-online.github.io</p>
-      <p><strong>Category:</strong> Games</p>
-      <p class="small">Your request was categorized by FortiGuard Web Filter as Games. If you need assistance contact your local IT staff.</p>
+    <h1>Web Page Blocked!</h1>
+
+    <div class="section">
+      You have tried to access a web page which is in violation of your internet usage policy.
+    </div>
+
+    <div class="section">
+      <strong>URL:</strong> driftboss-online.github.io/<br>
+      <strong>Category:</strong> <span class="category">Games</span>
+    </div>
+
+    <div class="section">
+      <strong>Client IP:</strong> 10.40.14.251<br>
+      <strong>Server IP:</strong> 185.199.110.153<br>
+      <strong>Proxy Hostname:</strong> dover-k12proxy-2
+    </div>
+
+    <div class="footer">
+      Your request was categorized by FortiGuard Web Filter as Games.<br>
+      To have the rating of this web page re-evaluated <a href="#">please click here</a>.<br>
+      All Internet usage is subject to the State of Delaware <a href="#">Acceptable Use Policy</a>.<br>
+      If you need further assistance with this error, please contact your local IT staff.
     </div>
   </div>
 </body>
