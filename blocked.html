@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Page Blocked!</title>
+  <style>
+    :root{
+      --bg:#235c86;
+      --card:#dce8f1;
+      --card-border:#0b2740;
+    }
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:#222;
+      padding:30px;
+    }
+
+    .container{
+      position:relative;           /* allows absolute positioning of the seal */
+      width:min(86%, 920px);
+      box-shadow:0 2px 0 var(--card-border);
+    }
+
+    /* seal sits above the card, centered */
+    .seal {
+      position:absolute;
+      top:-36px;                   /* pulls the seal above the card */
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;         /* non-interactive */
+    }
+    .seal img{
+      width:96px;                  /* adjust size as needed */
+      height:auto;
+      display:block;
+      border-radius:6px;           /* optional */
+      background:transparent;
+    }
+
+    .card{
+      background:var(--card);
+      padding:56px 40px 40px;
+      border-radius:2px;
+      text-align:center;
+    }
+
+    h1{ color:#c61b1b; margin-top:0; }
+    .meta { color:#666; font-size:14px; margin:14px 0; }
+    .small { font-size:12px; color:#445; margin-top:8px; }
+    @media (max-width:420px){
+      .seal img { width:72px; }
+      .card { padding:46px 20px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Seal: use relative path to the uploaded image -->
+    <div class="seal" aria-hidden="true">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbVLz_qR_itDSyI5E1QxluA-RKxdTT7ocVLr3B4Jh8r9qGDbYHJsKbHMXhqssKgCJk75o&usqp=CAU" alt="Great Seal of the State of Delaware">
+    </div>
+
+    <div class="card">
+      <h1>Web Page Blocked!</h1>
+      <p class="meta">You have tried to access a web page which is in violation of your internet usage policy.</p>
+      <p><strong>URL:</strong> driftboss-online.github.io</p>
+      <p><strong>Category:</strong> Games</p>
+      <p class="small">Your request was categorized by FortiGuard Web Filter as Games. If you need assistance contact your local IT staff.</p>
+    </div>
+  </div>
+</body>
+</html>
