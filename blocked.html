@@ -1,103 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Page Blocked!</title>
-  <style>
-    body {
-      background-color: #2b5d8c;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 50px 10px;
-      color: #333;
-    }
-
-    .page {
-      background-color: #dce8f1;
-      border-radius: 4px;
-      padding: 40px;
-      display: inline-block;
-      max-width: 800px;
-      text-align: center;
-    }
-
-    .seal {
-      margin-bottom: 10px;
-    }
-
-    .seal img {
-      width: 80px;
-      height: auto;
-    }
-
-    h1 {
-      color: red;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-
-    .category {
-      font-weight: bold;
-      margin-top: 8px;
-      color: #c00;
-    }
-
-    .footer {
-      font-size: 13px;
-      color: #555;
-      margin-top: 25px;
-      line-height: 1.5;
-    }
-
-    a {
-      color: blue;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .page {
-        width: 95%;
-        padding: 25px 10px;
-      }
-    }
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Web Filter Violation
+</title>
+<style type="text/css">
+html, body {
+margin: 0;
+padding: 0;
+font-family: Verdana, Arial, sans-serif;
+font-size: 10pt;
+background-color: #20578e;
+}
+h1, h2 {
+height: 82px;
+text-indent: -999em;
+margin: 0;
+padding: 0;
+margin: 0;
+}
+div {
+margin: 0;
+padding: 0;
+}
+div.content-area{
+top:100px !important;
+width: 890px;
+margin: 0px auto;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+color: #666;
+padding: 15px;
+border: 3px outset #20578e;
+background-color: #ddeaf7;
+}
+div.sidebar {
+width: 195px;
+height: 200px;
+float: left;
+}
+div.main {
+padding: 100px 5px 5px 5px;
+}
+div.buttons {
+margin-top: 30px;
+text-align: right;
+}
+h3 {
+margin: 36px 0;
+font-size: 16pt;
+}
+.blocked h3 {
+color: #c00;
+}
+.authenticate h3 {
+color: #36c;
+}
+h2.fgd_icon {
+background: url(http://url.fortinet.net:8008/XX/YY/ZZ/CI/DHEHBGEHFGPFDHFGBGMG);
+width: 160px;
+height: 172px;
+margin: 48px auto;
+}
+.blocked h2.fgd_icon {
+background-position: 0 -166px;
+}
+.authenticate h2.fgd_icon {
+background-position: -89px -166px;
+}
+form {
+width: 300px;
+margin: 30px 0;
+}
+label {
+display: block;
+width: 300px;
+margin: 5px 0;
+line-height: 25px;
+}
+label input {
+width: 200px;
+border: 1px solid #7f9db9;
+height: 20px;
+float: right;
+}
+</style>
 </head>
-<body>
-  <div class="page">
-    <div class="seal">
-      <!-- You can upload a seal image to your repo (images/seal.png) and link it below -->
-      <img src="https://www.countryreports.org/cdn/c3RhdGVzL3N5bWJvbHMvZGVzdGF0ZXNlYWwuanBn/ZXhXPTMwMA==.htp?ext=jpg" alt="Great Seal of the State of Delaware">
-    </div>
+<body class="blocked">
+<div class="main">
+<div class="content-area">
+<img alt="Great Seal of the State of Delaware" src="http://url.fortinet.net:8008/XX/YY/ZZ/CI/DHEHBGEHFGPFDHFGBGMG" />
+<h3>
+Web Page Blocked!
+</h3>
+<div class="notice">
+<p>
+You have tried to access a web page which is in violation of your internet usage policy.
+</p>
+<p>
+URL: www.tiktok.com/
+<br />
+Category:
+<h3>
+National Security Concern
+</h3>
+<br/>
+Client IP: 10.40.9.156
+<br/>
+Server IP: 23.211.241.68
+<br/>
+Proxy Hostname: biggs-k12proxy-5
+</p>
+<p>
 
-    <h1>Web Page Blocked!</h1>
 
-    <div class="section">
-      You have tried to access a web page which is in violation of your internet usage policy.
-    </div>
-
-    <div class="section">
-      <strong>URL:</strong> driftboss-online.github.io/<br>
-      <strong>Category:</strong> <span class="category">Games</span>
-    </div>
-
-    <div class="section">
-      <strong>Client IP:</strong> 10.40.14.251<br>
-      <strong>Server IP:</strong> 185.199.110.153<br>
-      <strong>Proxy Hostname:</strong> dover-k12proxy-2
-    </div>
-
-    <div class="footer">
-      Your request was categorized by FortiGuard Web Filter as Games.<br>
-      To have the rating of this web page re-evaluated <a href="#">please click here</a>.<br>
-      All Internet usage is subject to the State of Delaware <a href="#">Acceptable Use Policy</a>.<br>
-      If you need further assistance with this error, please contact your local IT staff.
-    </div>
-  </div>
+</p>
+<p>
+Your request was categorized by FortiGuard Web Filter as National Security Concern.
+<br/>
+To have the rating of this web page re-evaluated
+<a href="https://globalurl.fortinet.net/rate/submit.php?id=4347707B5C6D4858213526283360202D&cat=8F&loc=https://www%2etiktok%2ecom%2f&ver=10">
+please click here
+</a>
+.
+<br/>
+All Internet usage is subject to the State of Delaware <a href="http://dti.delaware.gov/pdfs/pp/AcceptableUsePolicy.pdf" target="_blank">Acceptable Use Policy</a>.
+<br/>
+If you need further assistance with this error, please contact your local IT staff.
+</p>
+</div>
+</div>
+</div>
 </body>
 </html>
+
+
+
+
