@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Full-page GIF background with dark overlay */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -32,7 +31,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.5); /* dark overlay */
+      background-color: rgba(0,0,0,0.5);
       z-index: -1;
     }
 
@@ -71,13 +70,21 @@
     }
 
     main {
-      padding-top: 120px; /* avoid header overlap */
+      padding-top: 120px;
       padding-bottom: 40px;
-      min-height: calc(100vh - 120px); /* full screen minus header */
+      min-height: calc(100vh - 120px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    #splash {
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px black;
     }
 
     .button-row {
@@ -103,7 +110,6 @@
       background-color: #026bb2;
     }
 
-    /* Social media icons row */
     .social-row {
       margin-top: 25px;
       display: flex;
@@ -137,17 +143,6 @@
       padding: 20px 0;
       text-align: center;
       font-size: 14px;
-      position: relative;
-    }
-
-    footer a {
-      color: #0284d4;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     h1 span {
@@ -174,6 +169,8 @@
 
   <main>
     <h1>Welcome To <span>Rocky Reborn (Experiences)</span></h1>
+
+    <!-- Splash Text Appears Here -->
     <p id="splash"></p>
 
     <div class="button-row">
@@ -183,23 +180,12 @@
       <button onclick="window.open('https://rockyreborn.vercel.app/update-logs.html', '_blank')">Update Logs</button>
     </div>
 
-    <!-- Social Media Buttons -->
     <div class="social-row">
-      <a href="https://www.youtube.com/channel/UCBzG0y1s4QNZyfxsrt-QZ4Q" target="_blank">
-        <img src="images/icons/youtube-logo.svg" alt="YouTube">
-      </a>
-      <a href="https://sites.google.com/view/roughgames" target="_blank">
-        <img src="images/icons/rough-games.png" alt="Rough Games">
-      </a>
-      <a href="https://twitter.com/RockyGamesDevs" target="_blank">
-        <img src="images/icons/x-logo.svg" alt="Twitter/X">
-      </a>
-      <a href="https://instagram.com/RockyGamesDevs" target="_blank">
-        <img src="images/icons/insta-logo.svg" alt="Instagram">
-      </a>
-       <a href="https://tiktok.com/@RockyGamesDevs" target="_blank">
-        <img src="images/icons/tiktok-logo.svg" alt="TikTok">
-      </a>
+      <a href="https://www.youtube.com/channel/UCBzG0y1s4QNZyfxsrt-QZ4Q" target="_blank"><img src="images/icons/youtube-logo.svg" alt="YouTube"></a>
+      <a href="https://sites.google.com/view/roughgames" target="_blank"><img src="images/icons/rough-games.png" alt="Rough Games"></a>
+      <a href="https://twitter.com/RockyGamesDevs" target="_blank"><img src="images/icons/x-logo.svg" alt="Twitter/X"></a>
+      <a href="https://instagram.com/RockyGamesDevs" target="_blank"><img src="images/icons/insta-logo.svg" alt="Instagram"></a>
+      <a href="https://tiktok.com/@RockyGamesDevs" target="_blank"><img src="images/icons/tiktok-logo.svg" alt="TikTok"></a>
     </div>
   </main>
 
@@ -213,12 +199,10 @@
       <a href="thug-credits.html">Credits</a>
     </p>
     <p>
-      A Website Made By The Rocky Reborn Team. A New Rocky Team (Without Evan) Since 
+      A Website Made By The Rocky Reborn Team. A New Rocky Team (Without Evan) Since
       <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
     </p>
-    <p>
-      ⚠️ Disclaimer: All the gxmes/experiences featured on this website are not our property, and we extend full credit to their respective developers.
-    </p>
+    <p>⚠️ Disclaimer: All the gxmes/experiences featured on this website are not our property.</p>
   </footer>
 
   <script>
