@@ -30,11 +30,10 @@
       justify-content: center;
       padding: 0;
       margin: 0;
-      flex-wrap: wrap;
     }
 
     .nav-list li {
-      margin: 5px 15px;
+      margin: 0 15px;
     }
 
     .nav-list a {
@@ -52,7 +51,7 @@
     /* Banner */
     .banner {
       position: relative;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     .banner img {
@@ -80,7 +79,7 @@
       z-index: 1;
     }
 
-    /* Info */
+    /* Info text */
     .game-info {
       text-align: center;
       padding: 20px;
@@ -93,7 +92,7 @@
     .blue { color: #1e90ff; font-weight: bold; }
     .green { color: #28a745; font-weight: bold; }
 
-    /* Search */
+    /* Search Bar */
     .search-bar {
       display: flex;
       justify-content: center;
@@ -103,7 +102,7 @@
     .search-bar input {
       padding: 10px;
       font-size: 16px;
-      width: 260px;
+      width: 250px;
       border-radius: 5px;
       border: none;
       text-align: center;
@@ -112,8 +111,8 @@
     /* Game Grid */
     .game-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
       padding: 20px;
       max-width: 1300px;
       margin: 0 auto;
@@ -129,6 +128,7 @@
       height: 230px;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
     }
 
     .game-card:hover {
@@ -138,7 +138,7 @@
 
     .game-card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
       border-radius: 5px;
     }
@@ -174,51 +174,62 @@
 
 <div class="game-info">
   <p>
-    Here are some gxmes. If one doesn’t work, report it on the
-    <b>Report An Issue</b> page. 🤩
+    Here are some gxmes. (Most gxmes shouldn't be blocked on school devices, some gxmes might take a bit to load.)
+    If a gxme doesn't work please report it on the <b>Report An Issue</b> Page;
+    For gxme ideas submit them on the <b>New Ideas</b> page. 🤩
+  </p>
+  <p>
+    <span class="red">RED NAMES</span> = Blocked on school devices.
+    <span class="blue">BLUE NAME</span> = Not the real game but similar.
+    <span class="green">GREEN NAME</span> = Proxied game 🥵🥶
   </p>
 </div>
 
 <div class="search-bar">
-  <input type="text" id="gameSearch" placeholder="Search gxmes...">
+  <input type="text" id="gameSearch" placeholder="Search experiences...">
 </div>
 
 <div class="game-grid" id="gameGrid"></div>
 
 <script>
   const games = [
-    { name: "Bitlife", img: "storage/images/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg", link: "storage/gxmes/bitlife/index.html" },
-    { name: "Cookie Clicker", img: "storage/images/unnamed.webp", link: "storage/gxmes/cookie-clicker/index.html" },
-    { name: "Wordle", img: "storage/images/wordle-logo.png", link: "storage/gxmes/wordle/index.html" },
-    { name: "Slope", img: "storage/images/slope.jpg", link: "storage/gxmes/slope/index.html" },
-    { name: "Run 3", img: "storage/images/10934781.png", link: "storage/gxmes/run3/index.html" }
-    // 🔥 You can paste the rest of your games here — same format
+    { name: "Bitlife", img: "images/icons/games/bitlife.jpg", link: "bitlife.html" },
+    { name: "Cookie Clicker", img: "images/icons/games/cookieclicker.jpg", link: "cookie.html" },
+    { name: "Wordle", img: "images/icons/games/wordle-logo.png", link: "the-word-game.html" }
+    // add more games here
   ];
 
-  const grid = document.getElementById("gameGrid");
-  const search = document.getElementById("gameSearch");
+  const searchInput = document.getElementById("gameSearch");
+  const gameGrid = document.getElementById("gameGrid");
 
   function renderGames(list) {
-    grid.innerHTML = "";
+    gameGrid.innerHTML = "";
     list.forEach(game => {
       const card = document.createElement("a");
       card.className = "game-card";
       card.href = game.link;
 
-      card.innerHTML = `
-        <img src="${game.img}" alt="${game.name}">
-        <p>${game.name}</p>
-      `;
-      grid.appendChild(card);
+      const img = document.createElement("img");
+      img.src = game.img;
+      img.alt = game.name;
+
+      const name = document.createElement("p");
+      name.textContent = game.name;
+
+      card.appendChild(img);
+      card.appendChild(name);
+      gameGrid.appendChild(card);
     });
   }
 
   renderGames(games);
 
-  search.addEventListener("input", () => {
-    const value = search.value.toLowerCase();
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
     renderGames(
-      games.filter(g => g.name.toLowerCase().includes(value))
+      games.filter(game =>
+        game.name.toLowerCase().includes(value)
+      )
     );
   });
 </script>
