@@ -4,16 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocky Reborn - Onsite Discord Notice</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      background-color: #111; /* dark background */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
+
+      /* Background image */
+      background: url("images/Rocky Christmas.gif") center / cover no-repeat fixed;
+    }
+
+    /* Dark tint overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55); /* adjust darkness here */
+      z-index: -1;
     }
 
     header {
@@ -31,6 +45,7 @@
       justify-content: center;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     .nav-list li {
@@ -54,25 +69,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 120px 20px 40px; /* space for header */
+      padding: 120px 20px 40px;
     }
 
     .wip-text {
       max-width: 800px;
       line-height: 1.8;
       font-size: 20px;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.65);
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 12px;
+      backdrop-filter: blur(2px);
     }
 
     .wip-text h1 {
       font-size: 28px;
       margin-bottom: 20px;
-      color: #0284d4;
+      color: #1e90ff;
+    }
+
+    .wip-text a {
+      color: #1e90ff;
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -89,26 +111,27 @@
       </ul>
     </nav>
   </header>
-<main>
-  <div class="wip-text">
-    <h1 style="color: #1e90ff;">On-site Discord Notice</h1>
-    <p><strong>12/28/2025</strong></p>
 
-    <p>
-      The 🪨 <strong>Rocky Hangout</strong> 🪨 (On-site Discord) has been disabled as of
-      <strong>12/28/2025</strong> until further notice.
-    </p>
+  <main>
+    <div class="wip-text">
+      <h1>On-site Discord Notice</h1>
+      <p><strong>12/28/2025</strong></p>
 
-    <p>
-      If you would like to contact us, please email our team at:
-      <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>
-    </p>
+      <p>
+        The 🪨 <strong>Rocky Hangout</strong> 🪨 (On-site Discord) has been disabled as of
+        <strong>12/28/2025</strong> until further notice.
+      </p>
 
-    <p>
-      Thanks for your understanding,<br />
-      — The Rocky Reborn Team
-    </p>
-  </div>
-</main>
+      <p>
+        If you would like to contact us, please email our team at:
+        <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>
+      </p>
+
+      <p>
+        Thanks for your understanding,<br>
+        — The Rocky Reborn Team
+      </p>
+    </div>
+  </main>
 </body>
 </html>
