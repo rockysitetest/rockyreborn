@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Games - Onsite Discord</title>
+  <title>Rocky Reborn - Onsite Discord Notice</title>
   <style>
     body {
       margin: 0;
-      background-color: black;
-      color: white;
       font-family: Arial, sans-serif;
+      color: white;
+      background-color: #111; /* dark background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
     }
 
     header {
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -40,37 +44,71 @@
       font-size: 16px;
     }
 
-    .nav-list a:hover {
-      color: #0284d4;
+    .nav-list a.active {
       text-decoration: underline;
+      color: #0284d4;
     }
 
-    iframe {
-      border: none;
-      width: 100%;
-      height: calc(100vh - 60px); /* Adjusted for header height */
-      margin-top: 60px; /* Prevent overlap with fixed header */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 40px; /* space for header */
+    }
+
+    .wip-text {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .wip-text h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #0284d4;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gxmes.html">Gxmes/Experiences</a></li>
-      <li><a href="apps-testing.html">Apps</a></li>
-      <li><a href="discord.html" style="color: #0284d4;">Onsite Discord</a></li>
-      <li><a href="emulator-test.html">Emulator</a></li>
-      <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-      <li><a href="new-ideas.html">New Ideas</a></li>
-      <li><a href="report-problem.html">Report a Problem</a></li>
-      <li><a href="about-rocky.html">About Rocky</a></li>
-    </ul>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Gxmes/Experiences</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html" class="active">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+      </ul>
+    </nav>
   </header>
+<main>
+  <div class="wip-text">
+    <h1 style="color: #1e90ff;">On-site Discord Notice</h1>
+    <p><strong>12/28/2025</strong></p>
 
-  <!-- WidgetBot Embed -->
-  <iframe src="https://e.widgetbot.io/channels/1178877271520583762/1251251743132483615"></iframe>
+    <p>
+      The 🪨 <strong>Rocky Hangout</strong> 🪨 (On-site Discord) has been disabled as of
+      <strong>12/28/2025</strong> until further notice.
+    </p>
 
+    <p>
+      If you would like to contact us, please email our team at:
+      <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>
+    </p>
+
+    <p>
+      Thanks for your understanding,<br />
+      — The Rocky Reborn Team
+    </p>
+  </div>
+</main>
 </body>
 </html>
