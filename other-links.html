@@ -7,13 +7,26 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Verdana, Arial, sans-serif;
       color: white;
-      background-color: #111;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       text-align: center;
+      background: url('images/rocky-cat.gif') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
     }
 
     header {
@@ -97,18 +110,14 @@
       background-color: rgba(0,0,0,0.6);
       padding: 30px;
       border-radius: 10px;
-      text-align: left;
+      text-align: center;
+      font-family: Verdana, Arial, sans-serif;
     }
 
     .wip-text h1 {
       font-size: 28px;
       margin-bottom: 20px;
       color: #0284d4;
-      text-align: center;
-    }
-
-    .wip-text p, .wip-text a {
-      font-size: 20px;
     }
 
     .wip-text a {
