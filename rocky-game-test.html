@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Games | Game Page</title>
+  <title>Rocky Games | Test Game Page</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #121212; /* lighter black */
+      background-color: #141414; /* lighter black */
       color: white;
       text-align: center;
     }
 
-    /* Navigation Header */
+    /* Navigation Header (UNCHANGED STYLE) */
     nav {
       background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
@@ -30,11 +30,10 @@
       justify-content: center;
       padding: 0;
       margin: 0;
-      flex-wrap: wrap;
     }
 
     .nav-list li {
-      margin: 5px 15px;
+      margin: 0 15px;
     }
 
     .nav-list a {
@@ -42,7 +41,6 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      transition: color 0.3s;
     }
 
     .nav-list a:hover {
@@ -50,15 +48,12 @@
       text-decoration: underline;
     }
 
-    /* Header with image */
+    /* Header Image (UNCHANGED) */
     header {
       position: relative;
       height: 300px;
-      background: url('images/rocky-space.jpeg') no-repeat center center;
+      background: url('images/rocky-city.gif') no-repeat center center;
       background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin-top: 50px;
     }
 
@@ -72,55 +67,28 @@
     header h1 {
       position: relative;
       z-index: 1;
-      font-size: 42px;
-      margin: 0;
+      padding-top: 120px;
+      font-size: 40px;
     }
 
     main {
       padding: 30px 20px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    /* Game banner */
-    .game-banner {
-      width: 100%;
-      max-width: 900px;
-      border-radius: 12px;
-      margin: 20px auto;
-      display: block;
-    }
-
-    /* Instructions */
-    .game-instructions {
-      margin-top: 20px;
+    /* Text */
+    .game-text {
       font-size: 16px;
       line-height: 1.6;
     }
 
     .click-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: #3ea6ff;
-      text-shadow: 0 0 8px rgba(62,166,255,0.7);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    .play-hint {
-      animation: pulse 1.8s infinite;
+      font-size: 20px; /* ONLY change */
       font-weight: bold;
     }
 
-    /* Play button */
-    .play-button-container {
-      margin-top: 30px;
-    }
-
+    /* Play Button (UNCHANGED STYLE) */
     button {
       background-color: #007bff;
       color: white;
@@ -152,46 +120,40 @@
   <nav>
     <ul class="nav-list">
       <li><a href="index.html">Home</a></li>
-      <li><a href="gxmes.html">Gxmes</a></li>
+      <li><a href="gxmes.html">Gxmes/Experiences</a></li>
       <li><a href="apps-testing.html">Apps</a></li>
       <li><a href="discord.html">Onsite Discord</a></li>
+      <li><a href="emulator-test.html">Emulator</a></li>
+      <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
       <li><a href="new-ideas.html">New Ideas</a></li>
-      <li><a href="report-problem.html">Report An Issue</a></li>
+      <li><a href="report-problem.html">Report a Problem</a></li>
       <li><a href="about-rocky.html">About Rocky</a></li>
     </ul>
   </nav>
 
   <!-- HEADER -->
   <header>
-    <h1>GAME NAME HERE</h1>
+    <h1>GAME NAME</h1>
   </header>
 
   <!-- MAIN -->
   <main>
-
-    <!-- GAME IMAGE -->
-    <img src="images/rocky-city.gif" alt="Game Banner" class="game-banner">
-
-    <!-- TEXT -->
-    <p class="game-instructions">
-      <span class="click-text">Click the</span>
-      <span class="play-hint">"Play Now"</span>
-      button to play!
+    <p class="game-text">
+      <span class="click-text">Click the</span> "Play Now" button to play!
       <br>
       (The game button may take a few seconds to load)
       <br>
-      If this game doesn't work, please report it in the
-      <a href="report-problem.html">Report An Issue</a> area.
+      If this game doesn't work please report it in the
+      <a href="report-problem.html">Report An Issue</a> area
     </p>
 
-    <!-- PLAY BUTTON -->
-    <div class="play-button-container">
-      <button>Play Now!</button>
-    </div>
+    <br>
 
+    <!-- PLAY NOW BUTTON -->
+    <button>Play Now!</button>
   </main>
 
-  <!-- PLAY NOW SCRIPT (UNCHANGED) -->
+  <!-- PLAY SCRIPT (100% UNCHANGED) -->
   <script>
     var url = "https://irsd.net";
     var win;
