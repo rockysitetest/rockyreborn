@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Thanks | Rocky Reborn</title>
+
+  <link rel="icon" type="image/png" href="images/rocky-favicon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('images/rocky-cat.gif') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0,0,0,0.9);
+      min-width: 180px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: white;
+      text-align: left;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #0284d4;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding-top: 120px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wip-text {
+      max-width: 900px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .wip-text h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0284d4;
+    }
+
+    .wip-text a {
+      color: #0284d4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .wip-text a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.7);
+      color: #ccc;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Gxmes/Experiences</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+        <li class="dropdown">
+          <a href="#">Info &#94;</a>
+          <ul class="dropdown-content">
+            <li><a href="other-links.html">Other Links</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="special-thanks.html">Special Thanks</a></li>
+            <li><a href="thug-credits.html">Credits</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wip-text">
+      <h1>Special Thanks</h1>
+      <ul>
+        <li>
+          Shockwassasin - For Making a super cool YouTube short promoting Rocky Games! 
+          <a href="https://www.youtube.com/shorts/_jl0fj-r008" target="_blank">Link: Here</a>
+          <span> Fun Fact: He's A Rocky Games Dev 🍙</span>
+        </li>
+        <li>
+          GreyBey13🥓 - Is working on a site of his own. 
+          Fun Fact: he is an ex boyfriend to Anonyman Here's the site 
+          <a href="https://sites.google.com/view/vexgamez" target="_blank">Vex Games 🦾</a>
+        </li>
+        <li>
+          YouCanTrustMe - Believe Me You can definitely trust him for sure (He also created Smooth Games) 💀
+        </li>
+        <li>
+          Redy - A Very Cool Person Using the Onsite Discord On Rocky Games
+        </li>
+      </ul>
+      <p>If you would like to be acknowledged or contribute, please contact us at 
+         <a href="mailto:Rockygamesdevteam@gmail.com">Rockygamesdevteam@gmail.com</a>
+      </p>
+      <p><strong>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</strong></p>
+    </div>
+  </main>
+</body>
+</html>
