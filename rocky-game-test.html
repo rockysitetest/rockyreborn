@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Games - GAME NAME</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #111;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-list li {
+      margin: 5px 12px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    main {
+      padding-top: 90px;
+    }
+
+    /* GAME BANNER */
+    .game-banner {
+      height: 260px;
+      background: url("images/rocky-city.gif") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .game-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .game-banner h1 {
+      position: relative;
+      font-size: 42px;
+      z-index: 1;
+      color: #1e90ff;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+
+    /* GAME CONTENT */
+    .game-content {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .game-content p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .game-content a {
+      color: #1e90ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* PLAY BUTTON (YOUR CODE STYLING ONLY) */
+    .game-content button {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    .game-content button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ROCKY HEADER -->
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">⚠️ Panic ⚠️</a></li>
+      <li><a href="gxmes.html">Games</a></li>
+      <li><a href="discord.html">Onsite Discord</a></li>
+      <li><a href="new-ideas.html">New Game/App Ideas</a></li>
+      <li><a href="report-problem.html">Report An Issue</a></li>
+      <li><a href="about-rocky.html">Info</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- GAME BANNER -->
+  <div class="game-banner">
+    <h1>GAME NAME</h1>
+  </div>
+
+  <!-- GAME INFO + PLAY -->
+  <div class="game-content">
+    <p>
+      Click the <strong>"Play Now"</strong> button to play!
+      (The game button may take a few seconds to load)
+      If <strong>GAME NAME</strong> doesn't work please report it in the
+      <a href="report-problem.html">Report An Issue</a> area.
+    </p>
+
+    <!-- YOUR PLAY NOW CODE (UNCHANGED) -->
+    <button>Play Now!</button>
+
+    <script>
+      var url = "GAME URL";
+      var win;
+
+      document.querySelector('button').onclick = function () {
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          win.document.body.style.height = '100vh';
+
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.src = url;
+
+          win.document.body.appendChild(iframe);
+        }
+
+        this.style.backgroundColor = 'grey';
+        this.innerHTML = "Play Now";
+      };
+    </script>
+    <!-- END PLAY NOW -->
+  </div>
+
+</main>
+
+</body>
+</html>
