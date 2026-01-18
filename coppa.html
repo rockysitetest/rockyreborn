@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocky Reborn | COPPA Compliance</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="rocky-favicon.png">
+  <link rel="icon" type="image/png" href="images/rocky-favicon.png">
 
   <style>
     body {
@@ -14,11 +12,14 @@
       font-family: Arial, sans-serif;
       color: white;
       background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
     header {
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -32,10 +33,12 @@
       justify-content: center;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     .nav-list li {
       margin: 0 15px;
+      position: relative;
     }
 
     .nav-list a {
@@ -50,13 +53,54 @@
       text-decoration: underline;
     }
 
-    /* Hero section */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0,0,0,0.9);
+      min-width: 180px;
+      top: 35px;
+      left: 0;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1001;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255,255,255,0.1);
+      color: #0284d4;
+    }
+
+    .nav-list li:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-arrow {
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .nav-list li:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
     .hero {
       position: relative;
       width: 100%;
+      max-width: 900px;
       height: 400px;
-      margin-top: 60px; /* space for fixed header */
+      margin-top: 80px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .hero img {
@@ -68,9 +112,6 @@
 
     .hero-text {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       color: white;
       text-align: center;
       max-width: 800px;
@@ -79,35 +120,50 @@
       border-radius: 10px;
     }
 
+    .hero-text h1 {
+      font-family: Verdana, sans-serif;
+      font-size: 48px;
+      margin: 0 0 10px 0;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin: 5px 0;
+    }
+
     .content {
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
-      text-align: center;
+      padding: 30px;
       font-size: 18px;
       line-height: 1.8;
-      background-color: #000;
+      text-align: center;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 12px;
     }
 
-    h1, h2 {
-      margin: 15px 0;
+    .content h2 {
+      margin: 20px 0 10px 0;
+      color: #0284d4;
     }
 
-    p {
-      margin-bottom: 15px;
+    .content p, .content li {
+      margin-bottom: 12px;
     }
 
-    a {
+    .content a {
       color: #0284d4;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    a:hover {
+    .content a:hover {
       text-decoration: underline;
     }
 
-    strong {
-      font-weight: bold;
+    ul {
+      padding-left: 0;
+      list-style: none;
     }
   </style>
 </head>
@@ -130,14 +186,13 @@
             <a href="other-links.html">Other Links</a>
             <a href="partners.html">Partners</a>
             <a href="special-thanks.html">Special Thanks</a>
-            <a href="credits.html">Credits</a>
+            <a href="thug-credits.html">Credits</a>
           </div>
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Image -->
   <div class="hero">
     <img src="images/rocky-space.jpeg" alt="Rocky Space">
     <div class="hero-text">
@@ -154,7 +209,7 @@
 
     <h2>📜 Who We Are</h2>
     <p>Rocky Reborn (“us”, “we”, or “our”) operates the Rocky Reborn website (the “Service”).</p>
-    <p>We legally have to take the privacy and safety of our users seriously, and we are committed to complying with all applicable laws, including COPPA in the EE.UU.</p>
+    <p>We legally have to take the privacy and safety of our users seriously, and we are committed to complying with all applicable laws, including COPPA in the U.S.</p>
 
     <h2>👶 Protecting Children’s Privacy</h2>
     <p>In accordance with COPPA, we do not knowingly collect or store personal information from children under the age of 13 without verifiable parental consent.</p>
@@ -165,10 +220,10 @@
     <p><strong>✅ Do NOT fill out or submit any forms on this site without the verified permission of your parent or legal guardian.</strong></p>
 
     <h2>👨‍👩‍👧 For Parents and Guardians</h2>
-    <p>If you think your child in the EE.UU that is under the age of 13 has submitted personal information (EX: SSID Numbers, SSN Numbers, Phone #'s, Home Address, etc...) on any Rocky Reborn Service without your consent, please contact us immediately at <a href="mailto:Rockygamesdevteam@gmail.com">Rockygamesdevteam@gmail.com</a></p>
+    <p>If you think your child under 13 has submitted personal information (EX: SSID Numbers, SSN Numbers, Phone #'s, Home Address, etc...) on any Rocky Reborn Service without your consent, please contact us immediately at <a href="mailto:Rockygamesdevteam@gmail.com">Rockygamesdevteam@gmail.com</a></p>
 
     <h2>📃 More Info</h2>
-    <p>For any more info please contact The Rocky Reborn Dev Team at <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>.</p>
+    <p>For any more info, please contact The Rocky Reborn Dev Team at <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>.</p>
   </div>
 </body>
 </html>
