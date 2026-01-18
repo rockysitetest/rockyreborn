@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocky Games | GAME NAME</title>
+  <title>Rocky Games | Game Page</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
+      background-color: #121212; /* lighter black */
       color: white;
       text-align: center;
     }
 
-    /* Navigation Header (UNCHANGED STYLE) */
+    /* Navigation Header */
     nav {
       background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
@@ -34,7 +34,7 @@
     }
 
     .nav-list li {
-      margin: 0 15px;
+      margin: 5px 15px;
     }
 
     .nav-list a {
@@ -50,18 +50,15 @@
       text-decoration: underline;
     }
 
-    /* GAME HEADER (SAME AS TOS HEADER) */
+    /* Header with image */
     header {
       position: relative;
       height: 300px;
-      background: url('images/rocky-city.gif') no-repeat center center;
+      background: url('images/rocky-space.jpeg') no-repeat center center;
       background-size: cover;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      color: white;
       margin-top: 50px;
     }
 
@@ -70,48 +67,61 @@
       position: absolute;
       inset: 0;
       background-color: rgba(0,0,0,0.5);
-      z-index: 0;
     }
 
     header h1 {
       position: relative;
       z-index: 1;
       font-size: 42px;
-      font-weight: bold;
-      color: #1e90ff;
       margin: 0;
     }
 
-    /* GAME CONTENT */
     main {
+      padding: 30px 20px;
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto;
     }
 
-    .game-box {
-      background-color: rgba(0,0,0,0.6);
-      padding: 30px;
+    /* Game banner */
+    .game-banner {
+      width: 100%;
+      max-width: 900px;
       border-radius: 12px;
+      margin: 20px auto;
+      display: block;
     }
 
-    .game-box p {
-      font-size: 18px;
-      line-height: 1.7;
+    /* Instructions */
+    .game-instructions {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    .game-box a {
-      color: #0284d4;
+    .click-text {
+      font-size: 20px;
       font-weight: bold;
-      text-decoration: none;
+      color: #3ea6ff;
+      text-shadow: 0 0 8px rgba(62,166,255,0.7);
     }
 
-    .game-box a:hover {
-      text-decoration: underline;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
-    /* PLAY BUTTON (STYLE ONLY — LOGIC UNCHANGED) */
-    .game-box button {
+    .play-hint {
+      animation: pulse 1.8s infinite;
+      font-weight: bold;
+    }
+
+    /* Play button */
+    .play-button-container {
+      margin-top: 30px;
+    }
+
+    button {
       background-color: #007bff;
       color: white;
       font-size: 20px;
@@ -119,78 +129,94 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 25px;
     }
 
-    .game-box button:hover {
+    button:hover {
       background-color: #0056b3;
+    }
+
+    a {
+      color: #0284d4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <ul class="nav-list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gxmes.html">Gxmes/Experiences</a></li>
-    <li><a href="apps-testing.html">Apps</a></li>
-    <li><a href="discord.html">Onsite Discord</a></li>
-    <li><a href="emulator-test.html">Emulator</a></li>
-    <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-    <li><a href="new-ideas.html">New Ideas</a></li>
-    <li><a href="report-problem.html">Report a Problem</a></li>
-    <li><a href="about-rocky.html">About Rocky</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gxmes.html">Gxmes</a></li>
+      <li><a href="apps-testing.html">Apps</a></li>
+      <li><a href="discord.html">Onsite Discord</a></li>
+      <li><a href="new-ideas.html">New Ideas</a></li>
+      <li><a href="report-problem.html">Report An Issue</a></li>
+      <li><a href="about-rocky.html">About Rocky</a></li>
+    </ul>
+  </nav>
 
-<!-- GAME HEADER -->
-<header>
-  <h1>GAME NAME</h1>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>GAME NAME HERE</h1>
+  </header>
 
-<!-- GAME CONTENT -->
-<main>
-  <div class="game-box">
-    <p>
-      Click the <strong>"Play Now"</strong> button to play!
+  <!-- MAIN -->
+  <main>
+
+    <!-- GAME IMAGE -->
+    <img src="images/rocky-city.gif" alt="Game Banner" class="game-banner">
+
+    <!-- TEXT -->
+    <p class="game-instructions">
+      <span class="click-text">Click the</span>
+      <span class="play-hint">"Play Now"</span>
+      button to play!
+      <br>
       (The game button may take a few seconds to load)
-      If <strong>GAME NAME</strong> doesn't work please report it in the
+      <br>
+      If this game doesn't work, please report it in the
       <a href="report-problem.html">Report An Issue</a> area.
     </p>
 
-    <!-- PLAY NOW CODE (100% UNCHANGED) -->
-    <button>Play Now!</button>
+    <!-- PLAY BUTTON -->
+    <div class="play-button-container">
+      <button>Play Now!</button>
+    </div>
 
-    <script>
-      var url = "GAME URL";
-      var win;
+  </main>
 
-      document.querySelector('button').onclick = function () {
-        if (win) {
-          win.focus();
-        } else {
-          win = window.open();
-          win.document.body.style.margin = '0';
-          win.document.body.style.height = '100vh';
+  <!-- PLAY NOW SCRIPT (UNCHANGED) -->
+  <script>
+    var url = "https://irsd.net";
+    var win;
 
-          var iframe = win.document.createElement('iframe');
-          iframe.style.border = 'none';
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.src = url;
+    document.querySelector('button').onclick = function () {
+      if (win) {
+        win.focus();
+      } else {
+        win = window.open();
+        win.document.body.style.margin = '0';
+        win.document.body.style.height = '100vh';
 
-          win.document.body.appendChild(iframe);
-        }
+        var iframe = win.document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.src = url;
 
-        this.style.backgroundColor = 'grey';
-        this.innerHTML = "Play Now";
-      };
-    </script>
-    <!-- END PLAY NOW -->
-  </div>
-</main>
+        win.document.body.appendChild(iframe);
+      }
+
+      this.style.backgroundColor = 'grey';
+      this.innerHTML = "Play Now";
+    };
+  </script>
 
 </body>
 </html>
