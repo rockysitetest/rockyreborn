@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocky Reborn | Home</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/rocky-favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/rocky-favicon.png">
@@ -50,10 +49,12 @@
       justify-content: center;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     .nav-list li {
       margin: 0 15px;
+      position: relative;
     }
 
     .nav-list a {
@@ -67,6 +68,37 @@
     .nav-list a:hover {
       color: #0284d4;
       text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0,0,0,0.9);
+      min-width: 180px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: white;
+      text-align: left;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #0284d4;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     main {
@@ -163,14 +195,22 @@
         <li><a href="new-ideas.html">New Ideas</a></li>
         <li><a href="report-problem.html">Report a Problem</a></li>
         <li><a href="about-rocky.html">About Rocky</a></li>
+        <li class="dropdown">
+          <a href="#">Info &#94;</a>
+          <ul class="dropdown-content">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Other Links</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Special Thanks</a></li>
+            <li><a href="#">Credits</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main>
     <h1>Welcome To <span>Rocky Reborn (Experiences)</span></h1>
-
-    <!-- Splash Text Appears Here -->
     <p id="splash.json"></p>
 
     <div class="button-row">
