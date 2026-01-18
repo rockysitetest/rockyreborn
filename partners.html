@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky Reborn | Partners</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('images/rocky-claw.gif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0,0,0,0.9);
+      min-width: 180px;
+      top: 35px;
+      left: 0;
+      border-radius: 5px;
+      text-align: left;
+      z-index: 1001;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255,255,255,0.1);
+      color: #0284d4;
+    }
+
+    .nav-list li:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-arrow {
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .nav-list li:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 40px;
+    }
+
+    .partners-text {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-family: Verdana, sans-serif;
+    }
+
+    .partners-text h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: white;
+      font-family: Verdana, sans-serif;
+    }
+
+    .partners-text a {
+      color: #0284d4;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .partners-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Gxmes/Experiences</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+        <li>
+          <a href="#">Info <span class="dropdown-arrow">^</span></a>
+          <div class="dropdown-content">
+            <a href="other-links.html">Other Links</a>
+            <a href="partners.html">Partners</a>
+            <a href="special-thanks.html">Special Thanks</a>
+            <a href="credits.html">Credits</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="partners-text">
+      <h1>Partners</h1>
+      <p>If you would like to be a partner with Rocky Reborn please <a href="mailto:Rockygamesdevteam@gmail.com">click here to submit a request</a>.</p>
+      <p>What is a partner, you might ask? A partner is another game site that meets the Rocky quality standards and wishes to be advertised on our site.</p>
+    </div>
+  </main>
+</body>
+</html>
 
