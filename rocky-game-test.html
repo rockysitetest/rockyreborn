@@ -14,7 +14,6 @@
       text-align: center;
     }
 
-    /* Navigation Header (UNCHANGED STYLE) */
     nav {
       background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
@@ -42,7 +41,6 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      transition: color 0.3s;
     }
 
     .nav-list a:hover {
@@ -50,7 +48,6 @@
       text-decoration: underline;
     }
 
-    /* GAME HEADER (SAME AS TOS HEADER) */
     header {
       position: relative;
       height: 300px;
@@ -78,41 +75,29 @@
       z-index: 1;
       font-size: 42px;
       font-weight: bold;
-      color: #1e90ff;
+      color: white; /* changed from blue to white */
       margin: 0;
     }
 
-    /* GAME CONTENT */
     main {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    .game-box {
-      background-color: rgba(0,0,0,0.6);
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-
-    .game-box p {
       font-size: 20px;
       line-height: 1.7;
     }
 
-    .game-box a {
+    a {
       color: #0284d4;
       font-weight: bold;
       text-decoration: none;
     }
 
-    .game-box a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    /* PLAY BUTTON (STYLE ONLY — LOGIC UNCHANGED) */
-    .game-box button {
+    button {
       background-color: #007bff;
       color: white;
       font-size: 20px;
@@ -123,7 +108,7 @@
       margin-top: 25px;
     }
 
-    .game-box button:hover {
+    button:hover {
       background-color: #0056b3;
     }
   </style>
@@ -131,7 +116,6 @@
 
 <body>
 
-<!-- NAV -->
 <nav>
   <ul class="nav-list">
     <li><a href="index.html">Home</a></li>
@@ -146,51 +130,45 @@
   </ul>
 </nav>
 
-<!-- GAME HEADER -->
 <header>
   <h1>Snow Rider 3D</h1>
 </header>
 
-<!-- GAME CONTENT -->
 <main>
-  <div class="game-box">
-    <p>
-      Click the <strong>"Play Now"</strong> button to play!
-      (The game button may take a few seconds to load)
-      If <strong>Snow Rider 3D (Just Testing)</strong> doesn't work please report it in the
-      <a href="report-problem.html">Report An Issue</a> area.
-    </p>
+  <p>
+    Click the <strong>"Play Now"</strong> button to play!<br>
+    (The game button may take a few seconds to load)<br>
+    If <strong>Snow Rider 3D (Just Testing)</strong> doesn't work please report it in the
+    <a href="report-problem.html">Report An Issue</a> area.
+  </p>
 
-    <!-- PLAY NOW CODE (100% UNCHANGED) -->
-    <button>Play Now!</button>
+  <button>Play Now!</button>
 
-    <script>
-      var url = "https://rockysitetest.github.io/SnowRider3D/";
-      var win;
+  <script>
+    var url = "https://rockysitetest.github.io/SnowRider3D/";
+    var win;
 
-      document.querySelector('button').onclick = function () {
-        if (win) {
-          win.focus();
-        } else {
-          win = window.open();
-          win.document.body.style.margin = '0';
-          win.document.body.style.height = '100vh';
+    document.querySelector('button').onclick = function () {
+      if (win) {
+        win.focus();
+      } else {
+        win = window.open();
+        win.document.body.style.margin = '0';
+        win.document.body.style.height = '100vh';
 
-          var iframe = win.document.createElement('iframe');
-          iframe.style.border = 'none';
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.src = url;
+        var iframe = win.document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.src = url;
 
-          win.document.body.appendChild(iframe);
-        }
+        win.document.body.appendChild(iframe);
+      }
 
-        this.style.backgroundColor = 'grey';
-        this.innerHTML = "Play Now";
-      };
-    </script>
-    <!-- END PLAY NOW -->
-  </div>
+      this.style.backgroundColor = 'grey';
+      this.innerHTML = "Play Now";
+    };
+  </script>
 </main>
 
 </body>
