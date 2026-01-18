@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Rocky Reborn | Other Links </title>
-
-  <link rel="icon" type="image/png" href="rocky-favicon.png">
-
+  <title>Other Links | Rocky Reborn</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: Arial, sans-serif;
-      text-align: center;
       color: white;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
     }
 
     header {
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -45,12 +44,11 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      transition: color 0.3s;
     }
 
-    .nav-list a:hover {
-      color: #0284d4;
+    .nav-list a.active {
       text-decoration: underline;
+      color: #0284d4;
     }
 
     .dropdown-content {
@@ -84,80 +82,44 @@
       display: block;
     }
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      margin-top: 60px;
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 40px;
     }
 
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(50%);
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      text-align: center;
-      max-width: 900px;
-      padding: 40px;
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 15px;
-    }
-
-    .hero-text h1 {
-      margin: 0 0 20px 0;
-      font-size: 64px;
-    }
-
-    .hero-text p {
-      font-size: 26px;
-      line-height: 1.5;
-    }
-
-    .hero-text a {
-      color: #0284d4;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .game-box {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: rgba(0,0,0,0.7);
-      padding: 25px;
-      border-radius: 12px;
+    .wip-text {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
       text-align: left;
     }
 
-    .game-box h2 {
+    .wip-text h1 {
       font-size: 28px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      color: #0284d4;
       text-align: center;
     }
 
-    .game-box p, .game-box a {
+    .wip-text p, .wip-text a {
       font-size: 20px;
-      line-height: 1.6;
-      display: block;
-      margin: 8px 0;
     }
 
-    .game-box a {
+    .wip-text a {
       color: #0284d4;
       text-decoration: none;
     }
 
-    .game-box a:hover {
+    .wip-text a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
@@ -165,7 +127,7 @@
     <nav>
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="gxmes.html">Games</a></li>
+        <li><a href="gxmes.html">Gxmes/Experiences</a></li>
         <li><a href="apps-testing.html">Apps</a></li>
         <li><a href="discord.html">Onsite Discord</a></li>
         <li><a href="emulator-test.html">Emulator</a></li>
@@ -174,31 +136,26 @@
         <li><a href="report-problem.html">Report a Problem</a></li>
         <li><a href="about-rocky.html">About Rocky</a></li>
         <li class="dropdown">
-          <a href="#">Info &#94;</a>
+          <a href="#">Info ^</a>
           <ul class="dropdown-content">
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="other-links.html">Other Links</a></li>
             <li><a href="partners.html">Partners</a></li>
             <li><a href="special-thanks.html">Special Thanks</a></li>
-            <li><a href="thug-credits.html">Credits</a></li>
+            <li><a href="credits.html">Credits</a></li>
           </ul>
         </li>
       </ul>
     </nav>
   </header>
 
-  <div class="hero">
-    <img src="images/rocky-cat.gif" alt="Rocky Cat">
-    <div class="hero-text">
+  <main>
+    <div class="wip-text">
       <h1>Other Links</h1>
-      <p>Check out all our other important links and resources from the Rocky Reborn Team here!</p>
+      <p>Main: <a href="https://www.mathproblems.zip/" target="_blank">https://www.mathproblems.zip/</a></p>
+      <p>Backup: <a href="https://www.smoothbrained.games/" target="_blank">https://www.smoothbrained.games/</a> (Doesn't work because Epica took it down, Ty!)</p>
+      <p>Google Sites: <a href="https://sites.google.com/view/rocky-games" target="_blank">https://sites.google.com/view/rocky-games</a></p>
     </div>
-  </div>
-
-  <div class="game-box">
-    <h2>Rocky Games Main Links</h2>
-    <p>Main: <a href="https://www.mathproblems.zip/" target="_blank">https://www.mathproblems.zip/</a></p>
-    <p>Backup: <a href="https://www.smoothbrained.games/" target="_blank">https://www.smoothbrained.games/</a> (Doesn't work because Epica took it down, Ty!)</p>
-    <p>Google Sites: <a href="https://sites.google.com/view/rocky-games" target="_blank">https://sites.google.com/view/rocky-games</a></p>
-  </div>
+  </main>
 </body>
 </html>
