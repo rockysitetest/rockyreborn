@@ -6,10 +6,7 @@
   <title>Rocky Reborn | Home</title>
 
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/rocky-favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/rocky-favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/rocky-favicon.png">
-
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -20,19 +17,18 @@
       text-align: center;
       background: url('images/rocky-water-clean.gif') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
     }
 
     body::after {
       content: '';
       position: fixed;
       inset: 0;
-      background-color: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.5);
       z-index: -1;
     }
 
     header {
-      background-color: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.7);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -58,7 +54,6 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .nav-list a:hover {
@@ -71,27 +66,21 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.9);
       min-width: 180px;
       list-style: none;
       padding: 0;
       border-radius: 6px;
-      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .dropdown-content li a {
       display: block;
       padding: 10px 15px;
-      color: white;
       text-align: left;
-    }
-
-    .dropdown-content li a:hover {
-      background-color: #0284d4;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
     }
 
     main {
@@ -113,14 +102,13 @@
 
     .button-row {
       display: flex;
-      justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
       margin-top: 20px;
     }
 
     button {
-      background-color: #0284d4;
+      background: #0284d4;
       color: black;
       padding: 8px 15px;
       border: none;
@@ -130,7 +118,7 @@
     }
 
     button:hover {
-      background-color: #026bb2;
+      background: #026bb2;
     }
 
     h1 span {
@@ -149,8 +137,6 @@
       <li><a href="discord.html">Onsite Discord</a></li>
       <li><a href="emulator-test.html">Emulator</a></li>
       <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-      <li><a href="new-ideas.html">New Ideas</a></li>
-      <li><a href="report-problem.html">Report a Problem</a></li>
       <li><a href="about-rocky.html">About Rocky</a></li>
       <li class="dropdown">
         <a href="#">Info ^</a>
@@ -167,12 +153,11 @@
 
 <main>
   <h1>Welcome To <span>Rocky Reborn (Experiences)</span></h1>
-
   <p id="splash"></p>
 
   <div class="button-row">
-    <button onclick="window.location.href='https://discord.gg/GzFs8VNbX3'">Join our Discord</button>
-    <button onclick="window.location.href='https://sites.google.com/view/rocky-games'">Go To Our Old Site?</button>
+    <button onclick="location.href='https://discord.gg/GzFs8VNbX3'">Join our Discord</button>
+    <button onclick="location.href='https://sites.google.com/view/rocky-games'">Go To Our Old Site?</button>
     <button onclick="window.open('https://sites.google.com/view/dust-games','_blank')">Billy Gxmes??</button>
     <button onclick="window.open('https://rockyreborn.vercel.app/update-logs.html','_blank')">Update Logs</button>
   </div>
@@ -191,20 +176,20 @@
   fetch('splash.json')
     .then(res => res.json())
     .then(data => {
-      document.querySelector('#splash').innerHTML =
+      document.getElementById('splash').innerHTML =
         data[Math.floor(Math.random() * data.length)];
     });
 
   fetch('tos-flag.json')
     .then(res => res.json())
     .then(data => {
-      if (data.enabled && !localStorage.getItem('tosAccepted')) {
+      if (data.enabled && !localStorage.getItem('tosAccepted_v2')) {
         document.getElementById('tos-popup').style.display = 'flex';
       }
     });
 
   function acceptTOS() {
-    localStorage.setItem('tosAccepted', 'true');
+    localStorage.setItem('tosAccepted_v2', 'true');
     document.getElementById('tos-popup').style.display = 'none';
   }
 </script>
