@@ -17,6 +17,10 @@
       text-align: center;
       background: url('images/rocky-water-clean.gif') no-repeat center center fixed;
       background-size: cover;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     body::after {
@@ -71,6 +75,7 @@
       list-style: none;
       padding: 0;
       border-radius: 6px;
+      z-index: 1000;
     }
 
     .dropdown:hover .dropdown-content {
@@ -81,11 +86,17 @@
       display: block;
       padding: 10px 15px;
       text-align: left;
+      color: white;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #0284d4;
     }
 
     main {
       padding-top: 120px;
-      min-height: calc(100vh - 120px);
+      padding-bottom: 40px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -105,6 +116,7 @@
       gap: 15px;
       flex-wrap: wrap;
       margin-top: 20px;
+      justify-content: center;
     }
 
     button {
@@ -115,6 +127,7 @@
       font-size: 18px;
       border-radius: 5px;
       cursor: pointer;
+      transition: 0.4s all;
     }
 
     button:hover {
@@ -123,6 +136,23 @@
 
     h1 span {
       color: #0284d4;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.7);
+      color: #ccc;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #0284d4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -163,14 +193,21 @@
   </div>
 </main>
 
-<div id="tos-popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; align-items:center; justify-content:center;">
-  <div style="background:#111; padding:30px; max-width:500px; border-radius:12px;">
-    <h2 style="color:#0284d4;">📢 Terms of Service Update</h2>
-    <p>The Rocky Reborn Terms of Service have changed.</p>
-    <p><a href="tos.html" style="color:#ffd700; font-weight:bold;">View Updated TOS</a></p>
-    <button onclick="acceptTOS()">I Understand</button>
-  </div>
-</div>
+<footer>
+  <p>
+    <a href="tos.html">Terms And Conditions (TOS)</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="DMCA-Takedowns.html">Copyright Takedowns</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="coppa.html">COPPA Compliance</a> |
+    <a href="thug-credits.html">Credits</a>
+  </p>
+  <p>
+    A Website Made By The Rocky Reborn Team. A New Rocky Team (Without Evan) Since
+    <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
+  </p>
+  <p>⚠️ Disclaimer: All the gxmes/experiences featured on this website are not our property.</p>
+</footer>
 
 <script>
   fetch('splash.json')
@@ -179,19 +216,6 @@
       document.getElementById('splash').innerHTML =
         data[Math.floor(Math.random() * data.length)];
     });
-
-  fetch('tos-flag.json')
-    .then(res => res.json())
-    .then(data => {
-      if (data.enabled && !localStorage.getItem('tosAccepted_v2')) {
-        document.getElementById('tos-popup').style.display = 'flex';
-      }
-    });
-
-  function acceptTOS() {
-    localStorage.setItem('tosAccepted_v2', 'true');
-    document.getElementById('tos-popup').style.display = 'none';
-  }
 </script>
 </body>
 </html>
