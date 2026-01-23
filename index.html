@@ -6,7 +6,10 @@
   <title>Rocky Reborn | Home</title>
 
   <link rel="icon" type="image/png" href="images/rocky-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/rocky-favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/rocky-favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/rocky-favicon.png">
+
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -15,24 +18,24 @@
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-      background: url('images/rocky-water-clean.gif') no-repeat center center fixed;
+      background: url('images/Rocky Christmas.gif') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
     body::after {
       content: '';
       position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
       z-index: -1;
     }
 
     header {
-      background: rgba(0,0,0,0.7);
+      background-color: rgba(0,0,0,0.7);
       padding: 10px 0;
       position: fixed;
       width: 100%;
@@ -58,6 +61,8 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
     }
 
     .nav-list a:hover {
@@ -70,33 +75,36 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background: rgba(0,0,0,0.9);
+      background-color: rgba(0,0,0,0.9);
       min-width: 180px;
-      list-style: none;
       padding: 0;
+      margin: 0;
+      list-style: none;
       border-radius: 6px;
       z-index: 1000;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: white;
+      text-align: left;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #0284d4;
+      color: white;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    .dropdown-content li a {
-      display: block;
-      padding: 10px 15px;
-      text-align: left;
-      color: white;
-    }
-
-    .dropdown-content li a:hover {
-      background-color: #0284d4;
-    }
-
     main {
       padding-top: 120px;
       padding-bottom: 40px;
-      flex: 1;
+      min-height: calc(100vh - 120px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -113,15 +121,15 @@
 
     .button-row {
       display: flex;
+      justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
       margin-top: 20px;
-      justify-content: center;
     }
 
     button {
-      background: #0284d4;
       color: black;
+      background-color: #0284d4;
       padding: 8px 15px;
       border: none;
       font-size: 18px;
@@ -131,11 +139,34 @@
     }
 
     button:hover {
-      background: #026bb2;
+      background-color: #026bb2;
     }
 
-    h1 span {
-      color: #0284d4;
+    .social-row {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-row a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .social-row a:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .social-row img {
+      width: 24px;
+      height: 24px;
     }
 
     footer {
@@ -146,76 +177,82 @@
       font-size: 14px;
     }
 
-    footer a {
+    h1 span {
       color: #0284d4;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
-<header>
-  <nav>
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gxmes.html">Gxmes/Experiences</a></li>
-      <li><a href="apps-testing.html">Apps</a></li>
-      <li><a href="discord.html">Onsite Discord</a></li>
-      <li><a href="emulator-test.html">Emulator</a></li>
-      <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
-      <li><a href="about-rocky.html">About Rocky</a></li>
-      <li class="dropdown">
-        <a href="#">Info ^</a>
-        <ul class="dropdown-content">
-          <li><a href="other-links.html">Other Links</a></li>
-          <li><a href="partners.html">Partners</a></li>
-          <li><a href="special-thanks.html">Special Thanks</a></li>
-          <li><a href="thug-credits.html">Credits</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gxmes.html">Gxmes/Experiences</a></li>
+        <li><a href="apps-testing.html">Apps</a></li>
+        <li><a href="discord.html">Onsite Discord</a></li>
+        <li><a href="emulator-test.html">Emulator</a></li>
+        <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+        <li><a href="new-ideas.html">New Ideas</a></li>
+        <li><a href="report-problem.html">Report a Problem</a></li>
+        <li><a href="about-rocky.html">About Rocky</a></li>
+        <li class="dropdown">
+          <a href="#">Info &#94;</a>
+          <ul class="dropdown-content">
+            <li><a href="other-links.html">Other Links</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="spectal-thanks.html">Special Thanks</a></li>
+            <li><a href="thug-credits.html">Credits</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <h1>Welcome To <span>Rocky Reborn (Experiences)</span></h1>
-  <p id="splash"></p>
+  <main>
+    <h1>Welcome To <span>Rocky Reborn (Experiences)</span></h1>
 
-  <div class="button-row">
-    <button onclick="location.href='https://discord.gg/GzFs8VNbX3'">Join our Discord</button>
-    <button onclick="location.href='https://sites.google.com/view/rocky-games'">Go To Our Old Site?</button>
-    <button onclick="window.open('https://sites.google.com/view/dust-games','_blank')">Billy Gxmes??</button>
-    <button onclick="window.open('https://rockyreborn.vercel.app/update-logs.html','_blank')">Update Logs</button>
-  </div>
-</main>
+    <!-- Splash Text Inserted -->
+    <p id="splash"></p>
 
-<footer>
-  <p>
-    <a href="tos.html">Terms And Conditions (TOS)</a> |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="DMCA-Takedowns.html">Copyright Takedowns</a> |
-    <a href="contact.html">Contact Us</a> |
-    <a href="coppa.html">COPPA Compliance</a> |
-    <a href="thug-credits.html">Credits</a>
-  </p>
-  <p>
-    A Website Made By The Rocky Reborn Team. A New Rocky Team (Without Evan) Since
-    <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
-  </p>
-  <p>⚠️ Disclaimer: All the gxmes/experiences featured on this website are not our property.</p>
-</footer>
+    <div class="button-row">
+      <button onclick="window.location.href='https://discord.gg/GzFs8VNbX3'">Join our Discord</button>
+      <button onclick="window.location.href='https://sites.google.com/view/rocky-games'">Go To Our Old Site?</button>
+      <button onclick="window.open('https://sites.google.com/view/dust-games', '_blank')">Billy Gxmes??</button>
+      <button onclick="window.open('https://rockyreborn.vercel.app/update-logs.html', '_blank')">Update Logs</button>
+    </div>
 
-<script>
-  fetch('splash.json')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('splash').innerHTML =
-        data[Math.floor(Math.random() * data.length)];
-    });
-</script>
+    <div class="social-row">
+      <a href="https://www.youtube.com/channel/UCBzG0y1s4QNZyfxsrt-QZ4Q" target="_blank"><img src="images/icons/youtube-logo.svg" alt="YouTube"></a>
+      <a href="https://sites.google.com/view/roughgames" target="_blank"><img src="images/icons/rough-games.png" alt="Rough Games"></a>
+      <a href="https://twitter.com/RockyGamesDevs" target="_blank"><img src="images/icons/x-logo.svg" alt="Twitter/X"></a>
+      <a href="https://instagram.com/RockyGamesDevs" target="_blank"><img src="images/icons/insta-logo.svg" alt="Instagram"></a>
+      <a href="https://tiktok.com/@RockyGamesDevs" target="_blank"><img src="images/icons/tiktok-logo.svg" alt="TikTok"></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="tos.html">Terms And Conditions (TOS)</a> |
+      <a href="privacy-policy.html">Privacy Policy</a> |
+      <a href="DMCA-Takedowns.html">Copyright Takedowns</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="coppa.html">COPPA Compliance</a> |
+      <a href="thug-credits.html">Credits</a>
+    </p>
+    <p>
+      A Website Made By The Rocky Reborn Team. A New Rocky Team (Without Evan) Since
+      <a href="https://howlongagogo.com/date/2023/november/26" target="_blank">November 26th, 2023</a>!!
+    </p>
+    <p>⚠️ Disclaimer: All the gxmes/experiences featured on this website are not our property.</p>
+  </footer>
+
+  <script>
+    fetch('splash.json')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('#splash').innerHTML =
+          data[Math.floor(Math.random() * data.length)];
+      });
+  </script>
 </body>
 </html>
