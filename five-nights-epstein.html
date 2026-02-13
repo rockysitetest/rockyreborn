@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five Nights at Epst*in's | Rocky Reborn</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #141414; /* lighter black */
+      color: white;
+      text-align: center;
+    }
+
+    /* Navigation Header */
+    nav {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-list a:hover {
+      color: #0284d4;
+      text-decoration: underline;
+    }
+
+    /* GAME HEADER */
+    header {
+      position: relative;
+      height: 300px;
+      background: url('images/rocky-city.gif') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 42px;
+      font-weight: bold;
+      color: white; /* header text white */
+      margin: 0;
+      font-family: Verdana, sans-serif; /* changed font */
+    }
+
+    header .subtitle {
+      position: relative;
+      z-index: 1;
+      font-size: 18px; /* smaller text */
+      margin-top: 5px;
+      color: #ddd;
+    }
+
+    /* GAME CONTENT */
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .game-box {
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .game-box p {
+      font-size: 20px;
+      line-height: 1.7;
+      text-align: center;
+      margin: 0 0 25px 0; /* space between text and button */
+    }
+
+    .game-box a {
+      color: #0284d4;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .game-box a:hover {
+      text-decoration: underline;
+    }
+
+    .game-box button {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .game-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gxmes.html">Gxmes/Experiences</a></li>
+    <li><a href="apps-testing.html">Apps</a></li>
+    <li><a href="discord.html">Onsite Discord</a></li>
+    <li><a href="emulator-test.html">Emulator</a></li>
+    <li><a href="policy-password-tool.html">Wifi Password Puller</a></li>
+    <li><a href="new-ideas.html">New Ideas</a></li>
+    <li><a href="report-problem.html">Report a Problem</a></li>
+    <li><a href="about-rocky.html">About Rocky</a></li>
+  </ul>
+</nav>
+
+<!-- GAME HEADER -->
+<header>
+  <h1>Five Nights At Epst*in's</h1>
+  <div class="subtitle">No shot this gxme is real😭</div>
+</header>
+
+<!-- GAME CONTENT -->
+<main>
+  <div class="game-box">
+    <p>
+      Click the <strong>"Play Now"</strong> button to play! (The game button may take a few seconds to load) If <strong> Five Nights at Epst*in's</strong> doesn't work please report it in the <a href="report-problem.html">Report An Issue</a> area.
+    </p>
+
+    <button>Play Now!</button>
+
+    <script>
+      var url = "https://freedomgamingzone.github.io/five-nights-at-epsteins";
+      var win;
+
+      document.querySelector('button').onclick = function () {
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          win.document.body.style.height = '100vh';
+
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.src = url;
+
+          win.document.body.appendChild(iframe);
+        }
+
+        this.style.backgroundColor = 'grey';
+        this.innerHTML = "Play Now";
+      };
+    </script>
+  </div>
+</main>
+
+</body>
+</html>
