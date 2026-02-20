@@ -3,125 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocky Reborn | Cinematic Credits TEST</title>
+<title>Rocky Reborn | Cinematic Credits</title>
 <style>
-  body {
+  html, body {
     margin: 0;
-    font-family: 'Verdana', sans-serif;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     background: black;
     color: white;
-    overflow: hidden;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Intro container centered */
+  #intro {
     text-align: center;
-    position: relative;
-  }
-
-  /* Back button */
-  .back-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #0284d4;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 1000;
-  }
-  .back-btn:hover {
-    background: #026bb2;
-  }
-
-  /* Intro section */
-  .intro {
-    position: absolute;
-    top: 50%; /* Middle of screen */
-    left: 50%;
-    transform: translate(-50%, -50%);
     opacity: 0;
-    animation: fadeInIntro 3s forwards;
+    transition: opacity 2s;
   }
 
-  .intro img {
-    width: 250px;
+  #intro img {
+    width: 200px;
+    height: auto;
   }
 
-  .intro h2 {
-    margin-top: 25px; /* some spacing from logo */
+  #intro h2 {
+    margin-top: 20px;
     font-size: 24px;
     color: #0284d4;
   }
 
-  @keyframes fadeInIntro {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  /* Credits scrolling container */
+  #credits-container {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2;
+    animation: scrollCredits 40s linear forwards;
+    display: none; /* Hidden initially */
   }
 
-  /* Credits scroll section */
-  .credits-container {
-    position: absolute;
-    bottom: -100%; /* Start off-screen at bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    white-space: pre-line;
-    display: none;
-    animation: scrollCredits 120s linear forwards; /* slower scroll */
+  #credits-container img.logo {
+    width: 150px;
+    margin: 20px 0;
   }
 
   @keyframes scrollCredits {
     0% { bottom: -100%; }
-    100% { bottom: 120%; } /* scroll past top */
+    100% { bottom: 100%; }
   }
 
-  .credits-container img {
-    width: 180px;
-    margin: 20px 0;
+  /* Back button */
+  #back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0284d4;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
-  .credits-container p {
-    margin: 12px 0;
-    font-size: 20px;
-    line-height: 1.8;
+  #back-button:hover {
+    background-color: #026bb2;
   }
 </style>
 </head>
 <body>
 
-<button class="back-btn" onclick="window.location.href='thug-credits.html'">Back to Normal Credits</button>
-
 <!-- Intro Section -->
-<div class="intro" id="intro">
-  <img src="images/game-placeholder.png" alt="Rocky Logo">
+<div id="intro">
+  <img src="images/rocky-logo.png" alt="Rocky Logo">
   <h2>Made with love from the Rocky Team</h2>
 </div>
 
-<!-- Credits Scroll -->
-<div class="credits-container" id="credits">
+<!-- Scrolling Credits -->
+<div id="credits-container">
   <p>Designed, Developed, and Published by</p>
-  <img src="images/game-placeholder.png" alt="Rocky Logo">
-
-  <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
-  <p><strong>YouCanTrustMe (Hard Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
-  <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
-  <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
-  <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
-  <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough ---- (can't say word here)</p>
-  <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
-  <p><strong>Evan (The Forgotten Dev)</strong> - This was the dev that mainly ruined the old Rocky website</p>
-  <p>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</p>
+  <img class="logo" src="images/rocky-logo.png" alt="Rocky Logo">
+  <p>Angel (Lead Dev/Owner) - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
+  <p>YouCanTrustMe (Hard Dev) - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
+  <p>IDKShockwave (Lead Dev) - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
+  <p>AnonyMan1 (Lead Dev) - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
+  <p>Babahorse (Rocky Dev) - He made the Rocky Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
+  <p>DownwardSatyr70 (Rocky Dev) - A Rocky Dev that made our old website named Rough ----</p>
+  <p>Krisvic10 (Ex-Dev?) - Made the Rocky Logo that we love today 🫶🦁</p>
+  <p>Evan (The Forgotten Dev) - This was the dev that mainly ruined the old Rocky website</p>
+  <p>And of course to everyone who has supported us over 2 years, we thank you as well!!!</p>
 </div>
 
-<script>
-  // Show intro for 4 seconds
-  setTimeout(() => {
-    document.getElementById('intro').style.display = 'none';
+<!-- Back Button -->
+<button id="back-button" onclick="window.location.href='thug-credits.html'">Back to Normal Credits</button>
 
-    // Start credits scroll
-    const credits = document.getElementById('credits');
-    credits.style.display = 'block';
-  }, 4000);
+<script>
+  // Fade in the intro, then start credits
+  window.onload = function() {
+    const intro = document.getElementById('intro');
+    const credits = document.getElementById('credits-container');
+
+    intro.style.opacity = 1;
+
+    // Wait 3 seconds, then hide intro and show credits
+    setTimeout(() => {
+      intro.style.display = 'none';
+      credits.style.display = 'block';
+    }, 3000);
+  };
 </script>
 
 </body>
