@@ -19,7 +19,7 @@
   /* Credits wrapper starts in the middle of the screen */
   #credits-wrapper {
     position: absolute;
-    bottom: -50%; /* start below middle for cinematic effect */
+    bottom: 50%; /* start in the middle */
     width: 100%;
     text-align: center;
     animation: scrollCredits 60s linear forwards; /* slower scroll */
@@ -27,7 +27,7 @@
 
   /* Intro section at the top of the credits */
   #intro {
-    margin-bottom: 80px;
+    margin-bottom: 60px; /* space after intro before next section */
   }
 
   #intro img {
@@ -53,7 +53,7 @@
   }
 
   @keyframes scrollCredits {
-    0% { bottom: -50%; }
+    0% { bottom: 50%; }
     100% { bottom: 100%; }
   }
 
@@ -89,7 +89,7 @@
 
   <!-- Middle Text -->
   <p>Designed, Developed, and Published by</p>
-  <img class="logo" src="images/game-placeholder.png" alt="Rocky Logo">
+  <img class="logo" src="images/rocky-favicon.png" alt="Rocky Logo">
 
   <!-- People -->
   <p>Angel (Lead Dev/Owner) - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
