@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocky Reborn | Credits</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Verdana', sans-serif;
+    background: black;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .credits-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .credits {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    animation: scrollCredits 60s linear infinite;
+  }
+
+  @keyframes scrollCredits {
+    0% { bottom: -100%; }
+    100% { bottom: 100%; }
+  }
+
+  .credits h1 {
+    font-size: 36px;
+    margin: 20px 0;
+    color: #0284d4;
+  }
+
+  .credits p, .credits li {
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .credits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .credits a {
+    color: #ffd700;
+    text-decoration: none;
+  }
+
+  .credits a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="credits-container">
+  <div class="credits">
+    <h1>Rocky Reborn Credits</h1>
+
+    <ul>
+      <li>Shockwassasin - For making a super cool <a href="https://www.youtube.com/shorts/_jl0fj-r008" target="_blank">YouTube short</a> promoting Rocky Games! Fun Fact: He's a Rocky Games Dev 🍙</li>
+      <li>GreyBey13🥓 - Working on a site of his own. Fun Fact: He is an ex-boyfriend to Anonyman. Check it out: <a href="https://sites.google.com/view/vexgamez" target="_blank">Vex Games</a> 🦾</li>
+      <li>YouCanTrustMe - Believe me, you can definitely trust him (also created Smooth Games) 💀</li>
+      <li>Redy - A very cool person using the Onsite Discord on Rocky Games</li>
+    </ul>
+
+    <p>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</p>
+  </div>
+</div>
+
+</body>
+</html>
