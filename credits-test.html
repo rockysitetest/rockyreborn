@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocky Reborn | Cinematic Credits</title>
+<title>Rocky Reborn | Cinematic Credits Test </title>
 <style>
   body {
     margin: 0;
     font-family: 'Verdana', sans-serif;
-    background-color: black;
+    background: black;
     color: white;
     overflow: hidden;
     text-align: center;
     position: relative;
   }
 
-  /* Page button at bottom right */
+  /* Page Button */
   .back-btn {
     position: fixed;
     bottom: 20px;
@@ -33,10 +33,10 @@
     background: #026bb2;
   }
 
-  /* Intro section */
+  /* Intro Section */
   .intro {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -45,8 +45,6 @@
 
   .intro img {
     width: 250px;
-    display: block;
-    margin: 0 auto;
   }
 
   .intro h2 {
@@ -55,85 +53,55 @@
     color: #0284d4;
   }
 
-  .intro p {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
   @keyframes fadeInIntro {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
-  /* Middle text and second logo */
-  .middle {
+  /* Credits Scroll */
+  .credits-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    transform: translate(-50%, 0);
+    white-space: pre-line;
+    text-align: center;
     display: none;
-    animation: fadeInMiddle 3s forwards;
-  }
-
-  .middle img {
-    width: 200px;
-    display: block;
-    margin: 20px auto;
-  }
-
-  .middle h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: #ffd700;
-  }
-
-  @keyframes fadeInMiddle {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  /* Credits scroll */
-  .credits-container {
-    position: absolute;
-    bottom: -100%;
-    width: 100%;
     animation: scrollCredits 60s linear forwards;
-    display: none;
   }
 
   @keyframes scrollCredits {
-    0% { bottom: -100%; }
-    100% { bottom: 100%; }
+    0% { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, -200%); }
+  }
+
+  .credits-container img {
+    width: 180px;
+    margin: 10px 0;
   }
 
   .credits-container p {
+    margin: 8px 0;
     font-size: 20px;
-    line-height: 2;
-    margin: 5px 0;
+    line-height: 1.8;
   }
+
 </style>
 </head>
 <body>
 
-<!-- Page Button -->
 <button class="back-btn" onclick="window.location.href='thug-credits.html'">Back to Normal Credits</button>
 
 <!-- Intro Section -->
 <div class="intro" id="intro">
   <img src="images/rocky-logo.png" alt="Rocky Logo">
   <h2>Made with love from the Rocky Team</h2>
-  <p>Designed, Developed, and Published by</p>
 </div>
 
-<!-- Middle Section with Second Logo -->
-<div class="middle" id="middle">
-  <img src="images/rocky-logo.png" alt="Rocky Logo">
-</div>
-
-<!-- Cinematic Credits Scroll -->
+<!-- Credits Scroll -->
 <div class="credits-container" id="credits">
+  <p>Designed, Developed, and Published by</p>
+  <img src="images/rocky-logo.png" alt="Rocky Logo">
   <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
   <p><strong>YouCanTrustMe (Hard Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
   <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
@@ -146,18 +114,13 @@
 </div>
 
 <script>
-  // Show middle logo after 4 seconds
+  // Step 1: Show intro logo for 4 seconds
   setTimeout(() => {
     document.getElementById('intro').style.display = 'none';
-    const middle = document.getElementById('middle');
-    middle.style.display = 'block';
 
-    // Start credits scroll after 4 more seconds
-    setTimeout(() => {
-      middle.style.display = 'none';
-      document.getElementById('credits').style.display = 'block';
-    }, 4000);
-
+    // Step 2: Show credits scroll starting in middle
+    const credits = document.getElementById('credits');
+    credits.style.display = 'block';
   }, 4000);
 </script>
 
