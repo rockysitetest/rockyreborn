@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rocky Reborn | Credits</title>
-<link rel="stylesheet" href="style.css">
 <style>
   body {
     margin: 0;
     font-family: 'Verdana', sans-serif;
-    background: black;
+    background-color: black;
     color: white;
     overflow: hidden;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   .credits-container {
@@ -28,7 +24,7 @@
     position: absolute;
     bottom: -100%;
     width: 100%;
-    animation: scrollCredits 60s linear infinite;
+    animation: scrollCredits 90s linear infinite; /* adjust speed as needed */
   }
 
   @keyframes scrollCredits {
@@ -36,30 +32,22 @@
     100% { bottom: 100%; }
   }
 
-  .credits h1 {
-    font-size: 36px;
-    margin: 20px 0;
+  .credits img {
+    width: 200px; /* Rocky logo size */
+    margin: 20px auto;
+    display: block;
+  }
+
+  .credits h2 {
+    font-size: 24px;
+    margin: 10px 0 40px 0;
     color: #0284d4;
   }
 
-  .credits p, .credits li {
+  .credits p {
     font-size: 20px;
     line-height: 2;
-  }
-
-  .credits ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .credits a {
-    color: #ffd700;
-    text-decoration: none;
-  }
-
-  .credits a:hover {
-    text-decoration: underline;
+    margin: 5px 0;
   }
 </style>
 </head>
@@ -67,14 +55,21 @@
 
 <div class="credits-container">
   <div class="credits">
-    <h1>Rocky Reborn Credits</h1>
+    <!-- Rocky Logo -->
+    <img src="images/rocky-logo.png" alt="Rocky Logo">
 
-    <ul>
-      <li>Shockwassasin - For making a super cool <a href="https://www.youtube.com/shorts/_jl0fj-r008" target="_blank">YouTube short</a> promoting Rocky Games! Fun Fact: He's a Rocky Games Dev 🍙</li>
-      <li>GreyBey13🥓 - Working on a site of his own. Fun Fact: He is an ex-boyfriend to Anonyman. Check it out: <a href="https://sites.google.com/view/vexgamez" target="_blank">Vex Games</a> 🦾</li>
-      <li>YouCanTrustMe - Believe me, you can definitely trust him (also created Smooth Games) 💀</li>
-      <li>Redy - A very cool person using the Onsite Discord on Rocky Games</li>
-    </ul>
+    <!-- Subtitle -->
+    <h2>Made with love from the Rocky Team</h2>
+
+    <!-- Team Members -->
+    <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
+    <p><strong>YouCanTrustMe (Hard Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
+    <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
+    <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
+    <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
+    <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough ---- (can't say word here)</p>
+    <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
+    <p><strong>Evan (The Forgotten Dev)</strong> - This was the dev that mainly ruined the old Rocky website</p>
 
     <p>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</p>
   </div>
