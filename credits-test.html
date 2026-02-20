@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocky Reborn | Credits</title>
+<title>Rocky Reborn | Cinematic Credits</title>
 <style>
   body {
     margin: 0;
@@ -12,19 +12,95 @@
     color: white;
     overflow: hidden;
     text-align: center;
-  }
-
-  .credits-container {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
   }
 
-  .credits {
+  /* Page button at bottom right */
+  .back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0284d4;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  .back-btn:hover {
+    background: #026bb2;
+  }
+
+  /* Intro section */
+  .intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInIntro 3s forwards;
+  }
+
+  .intro img {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .intro h2 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #0284d4;
+  }
+
+  .intro p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  @keyframes fadeInIntro {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Middle text and second logo */
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    animation: fadeInMiddle 3s forwards;
+  }
+
+  .middle img {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .middle h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ffd700;
+  }
+
+  @keyframes fadeInMiddle {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Credits scroll */
+  .credits-container {
     position: absolute;
     bottom: -100%;
     width: 100%;
-    animation: scrollCredits 90s linear infinite; /* adjust speed as needed */
+    animation: scrollCredits 60s linear forwards;
+    display: none;
   }
 
   @keyframes scrollCredits {
@@ -32,19 +108,7 @@
     100% { bottom: 100%; }
   }
 
-  .credits img {
-    width: 200px; /* Rocky logo size */
-    margin: 20px auto;
-    display: block;
-  }
-
-  .credits h2 {
-    font-size: 24px;
-    margin: 10px 0 40px 0;
-    color: #0284d4;
-  }
-
-  .credits p {
+  .credits-container p {
     font-size: 20px;
     line-height: 2;
     margin: 5px 0;
@@ -53,27 +117,49 @@
 </head>
 <body>
 
-<div class="credits-container">
-  <div class="credits">
-    <!-- Rocky Logo -->
-    <img src="images/rocky-logo.png" alt="Rocky Logo">
+<!-- Page Button -->
+<button class="back-btn" onclick="window.location.href='thug-credits.html'">Back to Normal Credits</button>
 
-    <!-- Subtitle -->
-    <h2>Made with love from the Rocky Team</h2>
-
-    <!-- Team Members -->
-    <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
-    <p><strong>YouCanTrustMe (Hard Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
-    <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
-    <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
-    <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
-    <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough ---- (can't say word here)</p>
-    <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
-    <p><strong>Evan (The Forgotten Dev)</strong> - This was the dev that mainly ruined the old Rocky website</p>
-
-    <p>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</p>
-  </div>
+<!-- Intro Section -->
+<div class="intro" id="intro">
+  <img src="images/rocky-logo.png" alt="Rocky Logo">
+  <h2>Made with love from the Rocky Team</h2>
+  <p>Designed, Developed, and Published by</p>
 </div>
+
+<!-- Middle Section with Second Logo -->
+<div class="middle" id="middle">
+  <img src="images/rocky-logo.png" alt="Rocky Logo">
+</div>
+
+<!-- Cinematic Credits Scroll -->
+<div class="credits-container" id="credits">
+  <p><strong>Angel (Lead Dev/Owner)</strong> - He has added 60+ games to the site, made the forms, and quite literally the site wouldn't exist without him. 👩‍❤️‍👨👑</p>
+  <p><strong>YouCanTrustMe (Hard Dev)</strong> - Made some changes to the home page, added emojis to everything, and got a referral on 2/13/24 😎🙍🏻‍♂️</p>
+  <p><strong>IDKShockwave (Lead Dev)</strong> - He made a YT Short promoting the site, added a lot of gxmes and has fixed some bugs. 🙍🏼‍♂️🪖</p>
+  <p><strong>AnonyMan1 (Lead Dev)</strong> - He has been here since before the start and has added a lot. 👯‍♀️🐵</p>
+  <p><strong>Babahorse (Rocky Dev)</strong> - He made the Rocky Name and made the idea for the logo 🥷🏻🧞‍♂️</p>
+  <p><strong>DownwardSatyr70 (Rocky Dev)</strong> - A Rocky Dev that made our old website named Rough ---- (can't say word here)</p>
+  <p><strong>Krisvic10 (Ex-Dev?)</strong> - Made the Rocky Logo that we love today 🫶🦁</p>
+  <p><strong>Evan (The Forgotten Dev)</strong> - This was the dev that mainly ruined the old Rocky website</p>
+  <p>And of course, to everyone who has supported us over 2 years, we thank you as well!!!</p>
+</div>
+
+<script>
+  // Show middle logo after 4 seconds
+  setTimeout(() => {
+    document.getElementById('intro').style.display = 'none';
+    const middle = document.getElementById('middle');
+    middle.style.display = 'block';
+
+    // Start credits scroll after 4 more seconds
+    setTimeout(() => {
+      middle.style.display = 'none';
+      document.getElementById('credits').style.display = 'block';
+    }, 4000);
+
+  }, 4000);
+</script>
 
 </body>
 </html>
