@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocky Reborn | Cinematic Credits Test </title>
+<title>Rocky Reborn | Cinematic Credits</title>
 <style>
   body {
     margin: 0;
@@ -61,18 +61,18 @@
   /* Credits Scroll */
   .credits-container {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Start in middle of screen */
     left: 50%;
     transform: translate(-50%, 0);
     white-space: pre-line;
     text-align: center;
     display: none;
-    animation: scrollCredits 60s linear forwards;
+    animation: scrollCredits 90s linear forwards; /* slower now */
   }
 
   @keyframes scrollCredits {
-    0% { transform: translate(-50%, 0); }
-    100% { transform: translate(-50%, -200%); }
+    0% { transform: translate(-50%, 0); }       /* start in middle */
+    100% { transform: translate(-50%, -220%); } /* move all the way up */
   }
 
   .credits-container img {
@@ -114,11 +114,11 @@
 </div>
 
 <script>
-  // Step 1: Show intro logo for 4 seconds
+  // Show intro for 4 seconds
   setTimeout(() => {
     document.getElementById('intro').style.display = 'none';
 
-    // Step 2: Show credits scroll starting in middle
+    // Start credits
     const credits = document.getElementById('credits');
     credits.style.display = 'block';
   }, 4000);
