@@ -11,54 +11,22 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #000;
+    background: black;
     color: white;
     text-align: center;
+    overflow-x: hidden;
   }
 
-  /* LOADING SCREEN */
-  #loading-screen {
+  canvas {
     position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 
-  .spinner {
-    border: 5px solid #333;
-    border-top: 5px solid #0284d4;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  /* HEADER */
   header {
     background: rgba(0,0,0,0.8);
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-icons img {
-    width: 30px;
-    margin: 0 10px;
-    cursor: pointer;
-  }
-
-  /* SETTINGS BOX */
-  .container {
-    padding: 30px;
   }
 
   .box {
@@ -92,70 +60,55 @@
 
 <body>
 
-<!-- LOADING -->
-<div id="loading-screen">
-  <div class="spinner"></div>
-  <h2>Loading Rocky...</h2>
-</div>
-
-<!-- HEADER -->
 <header>
-  <img src="images/rocky-favicon.png" style="width:40px; cursor:pointer;" onclick="location.href='index.html'">
-
-  <div class="header-icons">
-    <img src="images/icons/games.png" onclick="location.href='gxmes.html'">
-    <img src="images/icons/partners.png" onclick="location.href='partners.html'">
-    <img src="images/icons/settings.png">
-  </div>
+  <h1>⚙️ Rocky Settings</h1>
 </header>
 
-<!-- SETTINGS -->
-<div class="container">
-
-  <h1>Settings</h1>
-
-  <!-- TAB CLOAK -->
-  <div class="box">
-    <h2>Tab Cloak</h2>
-    <select id="cloakSelect">
-      <option value="Rocky Reborn">Default</option>
-      <option value="Google">Google</option>
-      <option value="Google Classroom">Classroom</option>
-      <option value="YouTube">YouTube</option>
-    </select>
-    <br>
-    <button onclick="applyCloak()">Apply</button>
-  </div>
-
-  <!-- CUSTOM CLOAK -->
-  <div class="box">
-    <h2>Custom Cloak</h2>
-    <input id="titleInput" placeholder="Custom Title">
-    <input id="iconInput" placeholder="Favicon URL">
-    <br>
-    <button onclick="setCustomCloak()">Set</button>
-  </div>
-
-  <!-- THEME -->
-  <div class="box">
-    <h2>Theme</h2>
-    <select onchange="changeTheme(this.value)">
-      <option value="default">Default</option>
-      <option value="blue">Blue</option>
-      <option value="red">Red</option>
-    </select>
-  </div>
-
+<!-- TAB CLOAKER -->
+<div class="box">
+  <h2>Tab Cloaker</h2>
+  <select id="cloakSelect">
+    <option value="Rocky Reborn">Default</option>
+    <option value="Google">Google</option>
+    <option value="Google Classroom">Google Classroom</option>
+    <option value="YouTube">YouTube</option>
+  </select>
+  <br>
+  <button onclick="applyCloak()">Apply</button>
 </div>
 
-<script>
-/* LOADING SCREEN */
-window.onload = () => {
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.display = "none";
-  }, 1000);
-};
+<!-- CUSTOM CLOAKER -->
+<div class="box">
+  <h2>Custom Cloaker</h2>
+  <input id="titleInput" placeholder="Custom Title">
+  <input id="iconInput" placeholder="Favicon URL">
+  <br>
+  <button onclick="setCustomCloak()">Set Cloak</button>
+</div>
 
+<!-- PARTICLES -->
+<div class="box">
+  <h2>Particles</h2>
+  <button onclick="enableParticles()">Enable</button>
+  <button onclick="disableParticles()">Disable</button>
+</div>
+
+<!-- ABOUT:BLANK CLOAKER -->
+<div class="box">
+  <h2>about:blank Cloaker</h2>
+  <p>Opens Rocky in a hidden tab</p>
+  <button onclick="openCloaked()">Launch Cloak</button>
+</div>
+
+<!-- DEBUG -->
+<div class="box">
+  <h2>Debug Mode</h2>
+  <button onclick="enterDebug()">Enter Debug</button>
+</div>
+
+<canvas id="particles"></canvas>
+
+<script>
 /* TAB CLOAK */
 function applyCloak() {
   const value = document.getElementById("cloakSelect").value;
@@ -180,15 +133,80 @@ function setCustomCloak() {
   }
 }
 
-/* THEME */
-function changeTheme(theme) {
-  if (theme === "blue") {
-    document.body.style.background = "#001f3f";
-  } else if (theme === "red") {
-    document.body.style.background = "#3f0000";
-  } else {
-    document.body.style.background = "#000";
+/* PARTICLES SYSTEM */
+let canvas = document.getElementById("particles");
+let ctx = canvas.getContext("2d");
+let particles = [];
+let animationRunning = false;
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 3,
+      speedX: Math.random() * 2 - 1,
+      speedY: Math.random() * 2 - 1
+    });
   }
+}
+
+function animateParticles() {
+  if (!animationRunning) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+function enableParticles() {
+  animationRunning = true;
+  createParticles();
+  animateParticles();
+}
+
+function disableParticles() {
+  animationRunning = false;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+/* ABOUT:BLANK CLOAKER */
+function openCloaked() {
+  let win = window.open();
+  let iframe = win.document.createElement("iframe");
+
+  iframe.style.border = "none";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.src = window.location.href;
+
+  win.document.body.style.margin = "0";
+  win.document.body.appendChild(iframe);
+
+  window.location.href = "https://www.google.com";
+}
+
+/* DEBUG */
+function enterDebug() {
+  alert("Debug Mode Enabled 😈");
+  console.log("Rocky Debug Mode Active");
 }
 </script>
 
