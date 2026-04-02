@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocky Reborn | Settings</title>
 
+<link rel="icon" href="images/rocky-favicon.png">
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
+    text-align: center;
+  }
+
+  /* LOADING SCREEN */
+  #loading-screen {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+
+  .spinner {
+    border: 5px solid #333;
+    border-top: 5px solid #0284d4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* HEADER */
+  header {
+    background: rgba(0,0,0,0.8);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-icons img {
+    width: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+
+  /* SETTINGS BOX */
+  .container {
+    padding: 30px;
+  }
+
+  .box {
+    background: #111;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+
+  button {
+    background: #0284d4;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background: #026bb2;
+  }
+
+  input, select {
+    padding: 8px;
+    margin: 5px;
+    width: 80%;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading-screen">
+  <div class="spinner"></div>
+  <h2>Loading Rocky...</h2>
+</div>
+
+<!-- HEADER -->
+<header>
+  <img src="images/rocky-favicon.png" style="width:40px; cursor:pointer;" onclick="location.href='index.html'">
+
+  <div class="header-icons">
+    <img src="images/icons/games.png" onclick="location.href='gxmes.html'">
+    <img src="images/icons/partners.png" onclick="location.href='partners.html'">
+    <img src="images/icons/settings.png">
+  </div>
+</header>
+
+<!-- SETTINGS -->
+<div class="container">
+
+  <h1>Settings</h1>
+
+  <!-- TAB CLOAK -->
+  <div class="box">
+    <h2>Tab Cloak</h2>
+    <select id="cloakSelect">
+      <option value="Rocky Reborn">Default</option>
+      <option value="Google">Google</option>
+      <option value="Google Classroom">Classroom</option>
+      <option value="YouTube">YouTube</option>
+    </select>
+    <br>
+    <button onclick="applyCloak()">Apply</button>
+  </div>
+
+  <!-- CUSTOM CLOAK -->
+  <div class="box">
+    <h2>Custom Cloak</h2>
+    <input id="titleInput" placeholder="Custom Title">
+    <input id="iconInput" placeholder="Favicon URL">
+    <br>
+    <button onclick="setCustomCloak()">Set</button>
+  </div>
+
+  <!-- THEME -->
+  <div class="box">
+    <h2>Theme</h2>
+    <select onchange="changeTheme(this.value)">
+      <option value="default">Default</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+    </select>
+  </div>
+
+</div>
+
+<script>
+/* LOADING SCREEN */
+window.onload = () => {
+  setTimeout(() => {
+    document.getElementById("loading-screen").style.display = "none";
+  }, 1000);
+};
+
+/* TAB CLOAK */
+function applyCloak() {
+  const value = document.getElementById("cloakSelect").value;
+  document.title = value;
+}
+
+/* CUSTOM CLOAK */
+function setCustomCloak() {
+  const title = document.getElementById("titleInput").value;
+  const icon = document.getElementById("iconInput").value;
+
+  if (title) document.title = title;
+
+  if (icon) {
+    let link = document.querySelector("link[rel='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = icon;
+  }
+}
+
+/* THEME */
+function changeTheme(theme) {
+  if (theme === "blue") {
+    document.body.style.background = "#001f3f";
+  } else if (theme === "red") {
+    document.body.style.background = "#3f0000";
+  } else {
+    document.body.style.background = "#000";
+  }
+}
+</script>
+
+</body>
+</html>
