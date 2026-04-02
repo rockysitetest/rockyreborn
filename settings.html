@@ -8,183 +8,238 @@
 <link rel="icon" href="images/rocky-favicon.png">
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: black;
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: black;
+}
 
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+/* HEADER (normal site style) */
+header {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  header {
-    background: rgba(0,0,0,0.8);
-    padding: 10px;
-  }
+header img {
+  height: 40px;
+  cursor: pointer;
+}
 
-  .box {
-    background: #111;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-  }
+header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  button {
-    background: #0284d4;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+header nav a:hover {
+  color: #0284d4;
+}
 
-  button:hover {
-    background: #026bb2;
-  }
+/* GRID SETTINGS (LEFT → RIGHT) */
+#settings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
 
-  input, select {
-    padding: 8px;
-    margin: 5px;
-    width: 80%;
-  }
+/* BOX STYLE */
+.box {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+  background: #0284d4;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+}
+
+button:hover {
+  background: #026bb2;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>⚙️ Rocky Settings</h1>
+  <img src="images/rocky-favicon.png" onclick="location.href='index.html'">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gxmes.html">Games</a>
+    <a href="about-rocky.html">About</a>
+  </nav>
 </header>
 
-<!-- TAB CLOAKER -->
-<div class="box">
-  <h2>Tab Cloaker</h2>
-  <select id="cloakSelect">
-    <option value="Rocky Reborn">Default</option>
-    <option value="Google">Google</option>
-    <option value="Google Classroom">Google Classroom</option>
-    <option value="YouTube">YouTube</option>
-  </select>
-  <br>
-  <button onclick="applyCloak()">Apply</button>
+<!-- SETTINGS -->
+<div id="settings">
+
+  <!-- TAB CLOAK -->
+  <div class="box">
+    <h3>Tab Cloak</h3>
+    <input id="titleInput" placeholder="Tab Title">
+    <input id="iconInput" placeholder="Favicon URL">
+    <br>
+    <button onclick="applyCloak()">Apply</button>
+    <button onclick="resetCloak()">Reset</button>
+  </div>
+
+  <!-- BACKGROUND -->
+  <div class="box">
+    <h3>Custom Background</h3>
+    <input id="bgInput" placeholder="Image URL">
+    <br>
+    <button onclick="setBackground()">Set Background</button>
+    <button onclick="resetBackground()">Reset</button>
+  </div>
+
+  <!-- PARTICLES -->
+  <div class="box">
+    <h3>Particles</h3>
+    <button onclick="enableParticles()">Enable</button>
+    <button onclick="disableParticles()">Disable</button>
+  </div>
+
+  <!-- DEBUG -->
+  <div class="box">
+    <h3>Debug</h3>
+    <button onclick="location.href='debug.html'">Open Debug</button>
+  </div>
+
+  <!-- ABOUT:BLANK CLOAKER -->
+  <div class="box">
+    <h3>About:Blank Cloaker</h3>
+    <button onclick="openCloaked()">Open Cloaked</button>
+  </div>
+
 </div>
 
-<!-- CUSTOM CLOAKER -->
-<div class="box">
-  <h2>Custom Cloaker</h2>
-  <input id="titleInput" placeholder="Custom Title">
-  <input id="iconInput" placeholder="Favicon URL">
-  <br>
-  <button onclick="setCustomCloak()">Set Cloak</button>
-</div>
-
-<!-- PARTICLES -->
-<div class="box">
-  <h2>Particles</h2>
-  <button onclick="enableParticles()">Enable</button>
-  <button onclick="disableParticles()">Disable</button>
-</div>
-
-<!-- ABOUT:BLANK CLOAKER -->
-<div class="box">
-  <h2>about:blank Cloaker</h2>
-  <p>Opens Rocky in a hidden tab</p>
-  <button onclick="openCloaked()">Launch Cloak</button>
-</div>
-
-<!-- DEBUG -->
-<div class="box">
-  <h2>Debug Mode</h2>
-  <button onclick="enterDebug()">Enter Debug</button>
-</div>
-
-<canvas id="particles"></canvas>
+<!-- PARTICLES CANVAS -->
+<canvas id="particles" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></canvas>
 
 <script>
-/* TAB CLOAK */
+/* TAB CLOAKER */
 function applyCloak() {
-  const value = document.getElementById("cloakSelect").value;
-  document.title = value;
-}
+  const title = document.getElementById('titleInput').value;
+  const icon = document.getElementById('iconInput').value;
 
-/* CUSTOM CLOAK */
-function setCustomCloak() {
-  const title = document.getElementById("titleInput").value;
-  const icon = document.getElementById("iconInput").value;
-
-  if (title) document.title = title;
+  if (title) {
+    document.title = title;
+    localStorage.setItem('tabTitle', title);
+  }
 
   if (icon) {
-    let link = document.querySelector("link[rel='icon']");
+    let link = document.querySelector("link[rel~='icon']");
     if (!link) {
-      link = document.createElement("link");
-      link.rel = "icon";
+      link = document.createElement('link');
+      link.rel = 'icon';
       document.head.appendChild(link);
     }
     link.href = icon;
+    localStorage.setItem('tabIcon', icon);
   }
 }
 
-/* PARTICLES SYSTEM */
+function resetCloak() {
+  localStorage.removeItem('tabTitle');
+  localStorage.removeItem('tabIcon');
+  location.reload();
+}
+
+/* LOAD SAVED CLOAK */
+window.onload = () => {
+  if (localStorage.getItem('tabTitle')) {
+    document.title = localStorage.getItem('tabTitle');
+  }
+
+  if (localStorage.getItem('tabIcon')) {
+    document.querySelector("link[rel~='icon']").href =
+      localStorage.getItem('tabIcon');
+  }
+
+  if (localStorage.getItem('bg')) {
+    document.body.style.background =
+      "url('" + localStorage.getItem('bg') + "') center/cover fixed";
+  }
+};
+
+/* BACKGROUND */
+function setBackground() {
+  const url = document.getElementById('bgInput').value;
+  document.body.style.background = `url('${url}') center/cover fixed`;
+  localStorage.setItem('bg', url);
+}
+
+function resetBackground() {
+  localStorage.removeItem('bg');
+  location.reload();
+}
+
+/* PARTICLES */
 let canvas = document.getElementById("particles");
 let ctx = canvas.getContext("2d");
-let particles = [];
-let animationRunning = false;
+let particlesArray = [];
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function createParticles() {
-  particles = [];
-  for (let i = 0; i < 80; i++) {
-    particles.push({
+  particlesArray = [];
+  for (let i = 0; i < 60; i++) {
+    particlesArray.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 3,
-      speedX: Math.random() * 2 - 1,
-      speedY: Math.random() * 2 - 1
+      size: 2,
+      speedY: Math.random() * 1 + 0.5
     });
   }
 }
 
 function animateParticles() {
-  if (!animationRunning) return;
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  particles.forEach(p => {
-    p.x += p.speedX;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particlesArray.forEach(p => {
     p.y += p.speedY;
-
-    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-
+    if (p.y > canvas.height) p.y = 0;
     ctx.fillStyle = "white";
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.fillRect(p.x, p.y, p.size, p.size);
   });
-
   requestAnimationFrame(animateParticles);
 }
 
 function enableParticles() {
-  animationRunning = true;
+  localStorage.setItem("particles", "on");
   createParticles();
   animateParticles();
 }
 
 function disableParticles() {
-  animationRunning = false;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  localStorage.setItem("particles", "off");
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+/* LOAD PARTICLES */
+if (localStorage.getItem("particles") === "on") {
+  createParticles();
+  animateParticles();
 }
 
 /* ABOUT:BLANK CLOAKER */
@@ -192,21 +247,15 @@ function openCloaked() {
   let win = window.open();
   let iframe = win.document.createElement("iframe");
 
-  iframe.style.border = "none";
   iframe.style.width = "100%";
   iframe.style.height = "100%";
-  iframe.src = window.location.href;
+  iframe.style.border = "none";
+  iframe.src = location.href;
 
   win.document.body.style.margin = "0";
   win.document.body.appendChild(iframe);
 
-  window.location.href = "https://www.google.com";
-}
-
-/* DEBUG */
-function enterDebug() {
-  alert("Debug Mode Enabled 😈");
-  console.log("Rocky Debug Mode Active");
+  location.replace("https://google.com");
 }
 </script>
 
