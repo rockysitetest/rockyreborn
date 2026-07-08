@@ -27,7 +27,7 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55); /* adjust darkness here */
+      background: rgba(0, 0, 0, 0.55);
       z-index: -1;
     }
 
@@ -93,6 +93,25 @@
       color: #1e90ff;
       font-weight: bold;
     }
+
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .store-badges img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .store-badges img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 
@@ -119,14 +138,31 @@
       <p><strong>07/08/2026</strong></p>
 
       <p>
-        Our site, Rocky Reborn has been hit with a DMCA Takedown Request. As a Result, <strong>Snow Rider 3D©️</strong> has been disabled and taken down as of
+        Our site, Rocky Reborn has been hit with a DMCA Takedown Request. As a result,
+        <strong>Snow Rider 3D©️</strong> has been disabled and taken down as of
         <strong>07/08/2026</strong> until further notice.
       </p>
-       
-    </p>
-      If you would like to obtain <strong>Snow Rider 3D©️</strong>, please do so, by using the official channels below. 
-       </p>
-      
+
+      <p>
+        If you would like to obtain <strong>Snow Rider 3D©️</strong>, please do so by using the official channels below.
+      </p>
+
+      <div class="store-badges">
+        <a href="https://play.google.com/store/apps/details?id=com.games.snowrider3d"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="/images/icons/google-play-badge.png"
+               alt="Get it on Google Play">
+        </a>
+
+        <a href="https://apps.apple.com/us/app/snow-rider-3d/id6472928555"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="/images/icons/app-store-badge.png"
+               alt="Download on the App Store">
+        </a>
+      </div>
+
       <p>
         If you would like to contact us, please email our team at:
         <a href="mailto:rockygamesdevteam@gmail.com">rockygamesdevteam@gmail.com</a>
