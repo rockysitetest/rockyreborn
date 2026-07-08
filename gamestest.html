@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocky Reborn | Experiences</title>
+<link rel="icon" type="image/png" href="images/rocky-favicon.png">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: white;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  z-index: 1;
+}
+
+/* Info text */
+.game-info {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.game-info a {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.red { color: red; font-weight: bold; }
+.blue { color: #1e90ff; font-weight: bold; }
+.green { color: #28a745; font-weight: bold; }
+.white { color: #FFFFFF; font-weight: bold; }
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+/* Game Grid */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: #222;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.game-card p {
+  margin: 8px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+  <img src="images/real-rocky-water.gif" alt="Rocky Water">
+  <div class="overlay"></div>
+  <div class="banner-text">Gxmes/Experiences</div>
+</div>
+
+<!-- Info -->
+<div class="game-info">
+  <p>
+    Here are some gxmes. (Most gxmes shouldn't be blocked on school devices, some gxmes might take a bit to load.)  
+    If a gxme doesn't work please report it on the 
+    <a href="https://rockysitetest.github.io/rockyreborn/report-problem.html" class="blue" target="_blank">Report An Issue</a> Page;  
+    For gxme ideas submit them on the 
+    <a href="https://rockysitetest.github.io/rockyreborn/new-ideas.html" class="blue" target="_blank">New Ideas</a> page. 🤩
+  </p>
+
+  <p>
+    <span class="red">RED NAMES</span> = Blocked on school devices.  
+    <span class="blue">BLUE NAME</span> = Not the real game but similar.  
+    <span class="green">GREEN NAME</span> = Proxied game 🥵🥶
+  </p>
+</div>
+
+<!-- Search -->
+<div class="search-bar">
+  <input type="text" placeholder="Search experiences..." id="gameSearch">
+</div>
+
+<!-- Game Grid -->
+<div class="game-grid" id="gameGrid">
+
+<a href="snowrider3d.html" class="game-card" target="_blank">
+<img src="images/icons/games/snowrider3d.jpg" alt="Snow Rider 3D">
+<p class="white">Snow Rider 3D</p>
+</a>
+
+<a href="cookie.html" class="game-card" target="_blank">
+<img src="images/icons/games/cookieclicker.jpg" alt="Cookie Clicker">
+<p class="white">Cookie Clicker</p>
+</a>
+
+<a href="the-word-game.html" class="game-card" target="_blank">
+<img src="images/icons/games/wordle-logo.png" alt="Wordle">
+<p class="white">Wordle</p>
+</a>
+
+<a href="five-nights-epstein.html" class="game-card" target="_blank">
+<img src="images/epstein.jpg" alt="Five Nights At Epsteins">
+<p class="white">Five Nights At Epst*in's</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 5">
+<p class="white">Gxme 5</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 6">
+<p class="white">Gxme 6</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 7">
+<p class="white">Gxme 7</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 8">
+<p class="white">Gxme 8</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 9">
+<p class="white">Gxme 9</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 10">
+<p class="white">Gxme 10</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 11">
+<p class="white">Gxme 11</p>
+</a>
+
+<a href="work-in-progress.html" class="game-card" target="_blank">
+<img src="images/game-placeholder.png" alt="Game 12">
+<p class="white">Gxme 12</p>
+</a>
+
+</div>
+
+<script>
+const searchInput = document.getElementById('gameSearch');
+const gameGrid = document.getElementById('gameGrid');
+const games = gameGrid.getElementsByClassName('game-card');
+
+searchInput.addEventListener('input', function() {
+  const filter = searchInput.value.toLowerCase();
+
+  Array.from(games).forEach(function(game) {
+    const name = game.querySelector('p').textContent.toLowerCase();
+    game.style.display = name.includes(filter) ? '' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>
