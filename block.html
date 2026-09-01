@@ -20,7 +20,7 @@
       background: url("images/rocky-water-clean.gif") center / cover no-repeat fixed;
     }
 
-    /* Dark overlay */
+    /* Dark tint overlay */
     body::before {
       content: "";
       position: fixed;
@@ -63,36 +63,60 @@
       color: #1e90ff;
     }
 
-    /* Button area */
+    /* Main content */
     main {
       padding: 120px 20px 40px;
       display: flex;
       justify-content: center;
     }
 
-    .button-container {
+    /* Dark box like the DMCA page */
+    .button-box {
+      max-width: 1000px;
       width: 100%;
-      max-width: 500px;
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Horizontal buttons */
+    .button-container {
       display: flex;
-      flex-direction: column;
-      gap: 18px;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .blue-button {
-      display: block;
+      display: inline-block;
       background-color: #0284d4;
       color: white;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
-      padding: 20px;
+      padding: 18px 25px;
       border-radius: 10px;
-      transition: transform 0.2s ease, background-color 0.2s ease;
+
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .blue-button:hover {
       background-color: #1e90ff;
-      transform: scale(1.03);
+      transform: translateY(-3px);
+
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+    }
+
+    .blue-button:active {
+      transform: translateY(1px);
     }
   </style>
 </head>
@@ -116,19 +140,16 @@
   </header>
 
   <main>
-    <div class="button-container">
+    <div class="button-box">
 
-      <a href="#" class="blue-button">Button 1</a>
-
-      <a href="#" class="blue-button">Button 2</a>
-
-      <a href="#" class="blue-button">Button 3</a>
-
-      <a href="#" class="blue-button">Button 4</a>
-
-      <a href="#" class="blue-button">Button 5</a>
-
-      <a href="#" class="blue-button">Button 6</a>
+      <div class="button-container">
+        <a href="#" class="blue-button">Button 1</a>
+        <a href="#" class="blue-button">Button 2</a>
+        <a href="#" class="blue-button">Button 3</a>
+        <a href="#" class="blue-button">Button 4</a>
+        <a href="#" class="blue-button">Button 5</a>
+        <a href="#" class="blue-button">Button 6</a>
+      </div>
 
     </div>
   </main>
