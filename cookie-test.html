@@ -1,1 +1,27 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta n ame="viewport" content="width=device-width, initial-scale=1.0"> <title>Rocky Reborn | Iframe Test</title> <style> body { margin: 0; font-family: Arial, sans-serif; background-color: #141414; color: white; text-align: center; } .game-box { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; } button { background-color: #007bff; color: white; font-size: 20px; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; } button:hover { background-color: #0056b3; } #game { display: none; width: 100%; height: 100vh; border: none; } </style> </head> <body> <div class="game-box"> <button id="playButton">Play Now!</button> <iframe id="game"></iframe> </div> <script> document.getElementById("playButton").onclick = function () { var game = document.getElementById("game"); game.srcdoc = ` <!DOCTYPE html> <html> <body style="margin:0;background:#141414;color:white;font-family:Arial;text-align:center;"> <h1>Iframe Test</h1> <p>The iframe is working correctly.</p> </body> </html> `; game.style.display = "block"; this.style.display = "none"; }; </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rocky Reborn | Iframe Test</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#141414;color:#fff;text-align:center}
+.game-box{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+button{background:#007bff;color:#fff;font-size:20px;padding:15px 30px;border:0;border-radius:8px;cursor:pointer}
+button:hover{background:#0056b3}
+#game{display:none;width:100%;height:100vh;border:0}
+</style>
+</head>
+<body>
+<div class="game-box">
+<button id="playButton">Play Now!</button>
+<iframe id="game"></iframe>
+</div>
+
+<script>
+(()=>{const _=["getElementById","playButton","game","https://truffled.lol/","block","none"];let $=document[_[0]](_[1]);$.onclick=()=>{let x=document[_[0]](_[2]);x.src=_[3];x.style.display=_[4];$.style.display=_[5]}})();
+</script>
+
+</body>
+</html>
+```
